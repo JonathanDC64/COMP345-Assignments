@@ -33,20 +33,10 @@ void readFilenames(vector<string> &filenames) {
 
 void numOccurences(const string &stopWord, const string &filename) {
 	ifstream fin(filename.c_str());
-	string line;
+	string word;
 
-	while (fin >> line) {
-		int start = 0;
-		int end = 0;
-		for (int i = 0; i < line.size(); ++i) {
-			cout << line.at(i) << endl;
-			if (line.at(i) == ' ') {
-				end = i - 1;
-				string word = line.substr(start, end);
-				start = i + 1;
-				cout << word << endl;
-			}
-		}
+	while (fin >> word) {
+		cout << word << endl;
 	}
 
 	fin.close();
