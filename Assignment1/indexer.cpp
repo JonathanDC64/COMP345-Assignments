@@ -27,7 +27,7 @@ string sanitize(string text) {
 	return text;
 }
 
-//Creates the dictionary from the stopwords file
+//Creates the dictionary from the stopwords filename
 void readDictionaryFile(map<string, string> &dictionary) {
 	ifstream fin(DICTIONARY_FILE.c_str());
 	string stopWord;
@@ -63,16 +63,17 @@ void readDocumentNames(vector<string> &filenames) {
 	fin.close();
 }
 
-int numOccurences(const string &stopWord, const string &filename) {
+vector<int> numOccurences(map<string, string> &dictionary, const string &filename) {
+	//initialize an occurences list with the same size as the dictionary and make all their values 0
+	vector<int> occurences(dictionary.size(), 0);
+
 	ifstream fin(filename.c_str());
 	string word;
-	int occurences = 0;
-
 
 	while (fin >> word) {
-		if (sanitize(word) == stopWord) {
-			occurences++;
-		}
+		//find the index of the word in the map
+		int index = distance(dictionary.begin(), dictionary.find(sanitize(word)));
+		occurences[index]++;
 	}
 
 	fin.close();
@@ -81,12 +82,9 @@ int numOccurences(const string &stopWord, const string &filename) {
 
 int main() {
 	map<string, string> dictionary;
-	//readDictionaryFile(dictionary);
-	//sort(dictionary.begin(), dictionary.end());
-
 	vector<string> documents;
-	readDocumentNames(documents);
 
+	readDocumentNames(documents);
 	generateDictionary(dictionary, documents);
 
 	cout << setw(DICTIONARY_WIDTH) << left << "Dictionary" ;
@@ -95,12 +93,19 @@ int main() {
 	}
 	cout << endl;
 
+	vector<vector<int>> occurences;
+	for (string filename : documents) {
+		occurences.push_back(numOccurences(dictionary, filename));
+	}
+
+	int row = 0;
 	for (pair<string, string> dict : dictionary) {
 		cout << setw(DICTIONARY_WIDTH) << left << dict.second;
-		for (string file : documents) {
-			cout << setw(file.size() + 4) << right << numOccurences(dict.second, file);
+		for (int i = 0; i < occurences.size(); ++i) {
+			cout << setw(documents[i].size() + 4) << right << occurences[i][row];
 		}
 		cout << endl;
+		row++;
 	}
 
 	system("pause");
