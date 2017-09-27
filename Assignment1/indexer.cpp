@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//test
 const string DICTIONARY_FILE = "dictionary.txt";
 const string FILENAME_FILE = "index.txt";
 const unsigned char DICTIONARY_WIDTH = 14;
