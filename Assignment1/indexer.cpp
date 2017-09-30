@@ -13,6 +13,7 @@ const string DICTIONARY_FILE = "dictionary.txt";
 const string FILENAME_FILE = "index.txt";
 const unsigned char DICTIONARY_WIDTH = 14;
 const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
+string::size_type biggestWordLength = 0;
 
 //Makes a word lower case and removes punctuation
 string sanitize(string text) {
@@ -32,7 +33,6 @@ string sanitize(string text) {
 void readDictionaryFile(map<string, string> &dictionary) {
 	ifstream fin(DICTIONARY_FILE.c_str());
 	string stopWord;
-	dictionary.clear();
 	while (fin >> stopWord) {
 		string word = sanitize(stopWord);
 		dictionary.insert(pair<string, string>(word, word));
@@ -48,6 +48,9 @@ void generateDictionary(map<string, string> &dictionary, const vector<string> &d
 		string word;
 		while (fin >> word) {
 			string lowercaseWord = sanitize(word);
+			if (word.length() > biggestWordLength) {
+				biggestWordLength = word.length();
+			}
 			dictionary.insert(pair<string, string>(lowercaseWord, lowercaseWord));
 		}
 		fin.close();
@@ -86,13 +89,34 @@ vector<int> numOccurences(map<string, string> &dictionary, const string &filenam
 	return occurences;
 }
 
-void output(map<string, string> &dictionary, const vector<string> &documents) {
-	cout << setw(DICTIONARY_WIDTH) << left << "Dictionary";
-	for (string file : documents) {
-		cout << setw(file.size() + 4) << right << file;
-	}
-	cout << endl;
 
+const void printFullLine(const vector<string>& documents) {
+	for (int i = 0; i<biggestWordLength + 4; i++) {
+		cout << "-";
+	}
+	for (int i = 0; i<documents.size(); i++) {
+		cout << "-";
+		for (int j = 0; j<documents[i].size(); j++) {
+			cout << "-";
+		}
+		cout << "--";
+	} cout << endl;
+}
+
+void printLegend(const vector<string>& documents) {
+	printFullLine(documents);
+	cout << "| " << left << setw(biggestWordLength) << "Dictionary" << " |";
+	for (int i = 0; i<documents.size(); i++) {
+		cout << " " + documents[i] + " |";
+	} cout << endl;
+	printFullLine(documents);
+}
+
+
+void output(map<string, string> &dictionary, const vector<string> &documents) {
+	
+	printLegend(documents);
+	
 	vector<vector<int>> occurences;
 	for (string filename : documents) {
 		occurences.push_back(numOccurences(dictionary, filename));
@@ -101,21 +125,41 @@ void output(map<string, string> &dictionary, const vector<string> &documents) {
 	vector<int> totals(documents.size(), 0);
 	int row = 0;
 	for (pair<string, string> dict : dictionary) {
-		cout << setw(DICTIONARY_WIDTH) << left << dict.second;
+		cout << "| " << left << setw(biggestWordLength) << dict.second << " |";
 		for (int i = 0; i < occurences.size(); ++i) {
-			cout << setw(documents[i].size() + 4) << right << occurences[i][row];
+			cout << setw(documents[i].size() + 1) << right << occurences[i][row] << " |";
 			totals[i] += occurences[i][row];
 		}
 		cout << endl;
 		row++;
 	}
 
-	cout << setw(DICTIONARY_WIDTH) << left << "Total";
+	printFullLine(documents);
+	cout << "| " << left << setw(biggestWordLength) << "Totals" << " |";
 	for (int i = 0; i < totals.size(); ++i) {
-		cout << setw(documents[i].size() + 4) << right << totals[i];
+		cout << setw(documents[i].size() + 1) << right << totals[i] << " |";
 	}
-	cout << endl << endl;
+	cout << endl;
+	printFullLine(documents);
+	cout << endl;
 }
+
+void removeStopWords(map<string, string>& dictionary) {
+	string stopWord;
+	map<string, string>::iterator it;
+
+	ifstream ifs(DICTIONARY_FILE.c_str());
+	while (ifs >> stopWord) {
+		stopWord = sanitize(stopWord);
+		it = dictionary.find(stopWord);
+
+		if (it != dictionary.end()) {
+			dictionary.erase(it);
+		}
+	}
+}
+
+
 
 int main() {
 
@@ -128,7 +172,8 @@ int main() {
 
 	output(dictionary, documents);
 
-	readDictionaryFile(dictionary);
+	removeStopWords(dictionary);
+
 	output(dictionary, documents);
 
 	system("pause");

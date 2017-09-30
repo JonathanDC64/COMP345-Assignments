@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="indexer.cpp.old">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="indexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
