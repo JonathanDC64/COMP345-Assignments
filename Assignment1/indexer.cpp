@@ -25,7 +25,7 @@ string sanitize(string text) {
 	}
 
 	//remove punctuation
-	text.erase(std::remove_if(text.begin(), text.end(), ispunct), text.end());
+	text.erase(std::remove_if(text.begin(), text.end(), ::ispunct), text.end());
 	return text;
 }
 
@@ -162,8 +162,6 @@ void removeStopWords(map<string, string>& dictionary) {
 
 
 int main() {
-
-
 	map<string, string> dictionary;
 	vector<string> documents;
 
@@ -175,7 +173,7 @@ int main() {
 	removeStopWords(dictionary);
 
 	output(dictionary, documents);
-
+	
 	system("pause");
 	return 0;
 }
