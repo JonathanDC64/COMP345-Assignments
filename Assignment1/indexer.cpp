@@ -57,6 +57,7 @@ void generateDictionary(map<string, string> &dictionary, const vector<string> &d
 	}
 }
 
+//reads the file that contains the names of all files that must be passed by the dictionary
 void readDocumentNames(vector<string> &filenames) {
 	ifstream fin(FILENAME_FILE.c_str());
 	string filename;
@@ -68,6 +69,7 @@ void readDocumentNames(vector<string> &filenames) {
 	fin.close();
 }
 
+//finds the number of times a word in the dictionary appears in a certain file
 vector<int> numOccurences(map<string, string> &dictionary, const string &filename) {
 	//initialize an occurences list with the same size as the dictionary and make all their values 0
 	vector<int> occurences(dictionary.size(), 0);
@@ -112,7 +114,7 @@ void printLegend(const vector<string>& documents) {
 	printFullLine(documents);
 }
 
-
+//displays dictionary terms and occurences to standard outpout
 void output(map<string, string> &dictionary, const vector<string> &documents) {
 	
 	printLegend(documents);
@@ -144,6 +146,7 @@ void output(map<string, string> &dictionary, const vector<string> &documents) {
 	cout << endl;
 }
 
+//removes all stopwords from the dictionary
 void removeStopWords(map<string, string>& dictionary) {
 	string stopWord;
 	map<string, string>::iterator it;
@@ -158,8 +161,6 @@ void removeStopWords(map<string, string>& dictionary) {
 		}
 	}
 }
-
-
 
 int main() {
 	map<string, string> dictionary;
