@@ -1,0 +1,4 @@
+﻿  indexer.cpp
+c:\users\justi\documents\github\comp345-assignments\assignment1\indexer.cpp(85): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  Assignment1.vcxproj -> C:\Users\justi\Documents\GitHub\COMP345-Assignments\Assignment1\x64\Debug\Assignment1.exe
+  Assignment1.vcxproj -> C:\Users\justi\Documents\GitHub\COMP345-Assignments\Assignment1\x64\Debug\Assignment1.pdb (Partial PDB)

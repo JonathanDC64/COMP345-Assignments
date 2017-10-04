@@ -48,7 +48,7 @@ void generateDictionary(map<string, string> &dictionary, const vector<string> &d
 		while (fin >> word) {
 			string lowercaseWord = sanitize(word);
 			if (lowercaseWord.length() > biggestWordLength) {
-				biggestWordLength = word.length();
+				biggestWordLength = lowercaseWord.length();
 			}
 			dictionary.insert(pair<string, string>(lowercaseWord, lowercaseWord));
 		}
