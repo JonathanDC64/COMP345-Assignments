@@ -11,7 +11,6 @@ using namespace std;
 //test
 const string DICTIONARY_FILE = "dictionary.txt";
 const string FILENAME_FILE = "index.txt";
-const unsigned char DICTIONARY_WIDTH = 14;
 const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
 string::size_type biggestWordLength = 0;
 
@@ -23,7 +22,7 @@ string sanitize(string text) {
 			c += LOWERCASE_OFFSET;
 		}
 	}
-
+	
 	//remove punctuation
 	text.erase(std::remove_if(text.begin(), text.end(), ::ispunct), text.end());
 	return text;
@@ -48,7 +47,7 @@ void generateDictionary(map<string, string> &dictionary, const vector<string> &d
 		string word;
 		while (fin >> word) {
 			string lowercaseWord = sanitize(word);
-			if (word.length() > biggestWordLength) {
+			if (lowercaseWord.length() > biggestWordLength) {
 				biggestWordLength = word.length();
 			}
 			dictionary.insert(pair<string, string>(lowercaseWord, lowercaseWord));
