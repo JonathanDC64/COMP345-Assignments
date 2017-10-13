@@ -1,8 +1,9 @@
 ﻿  indexer.cpp
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(95): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(98): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(100): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(110): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(130): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(140): warning C4018: '<': signed/unsigned mismatch
-  Assignment2.vcxproj -> D:\COMP345-Assignments\Assignment2\Debug\Assignment2.exe
+c:\users\justi\documents\github\comp345-assignments\assignment2\assignment2\indexer.cpp(95): warning C4018: '<': signed/unsigned mismatch
+c:\users\justi\documents\github\comp345-assignments\assignment2\assignment2\indexer.cpp(98): warning C4018: '<': signed/unsigned mismatch
+c:\users\justi\documents\github\comp345-assignments\assignment2\assignment2\indexer.cpp(100): warning C4018: '<': signed/unsigned mismatch
+c:\users\justi\documents\github\comp345-assignments\assignment2\assignment2\indexer.cpp(110): warning C4018: '<': signed/unsigned mismatch
+c:\users\justi\documents\github\comp345-assignments\assignment2\assignment2\indexer.cpp(130): warning C4018: '<': signed/unsigned mismatch
+c:\users\justi\documents\github\comp345-assignments\assignment2\assignment2\indexer.cpp(140): warning C4018: '<': signed/unsigned mismatch
+  Assignment2.vcxproj -> C:\Users\justi\Documents\GitHub\COMP345-Assignments\Assignment2\Debug\Assignment2.exe
+  Assignment2.vcxproj -> C:\Users\justi\Documents\GitHub\COMP345-Assignments\Assignment2\Debug\Assignment2.pdb (Partial PDB)
