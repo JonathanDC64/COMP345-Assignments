@@ -13,11 +13,11 @@ tokenizer::~tokenizer()
 {
 }
 
-vector<string> tokenizer::tokenize(const string & document) {
+std::vector<std::string> tokenizer::tokenize(const std::string & document) {
 
-	vector<string> tokens;
-	string word;
-	ifstream fin(document.c_str());
+	std::vector<std::string> tokens;
+	std::string word;
+	std::ifstream fin(document.c_str());
 
 	while (fin >> word) {
 		word = sanitize(word);
@@ -27,9 +27,9 @@ vector<string> tokenizer::tokenize(const string & document) {
 
 	return tokens;
 }
-// hey
+
 //Makes a word lower case and removes punctuation
-string tokenizer::sanitize(string & text) {
+std::string tokenizer::sanitize(std::string & text) {
     const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
 	for (char &c : text) {
 		//make lowercase

@@ -2,14 +2,12 @@
 #include <vector>
 #include <string>
 
-using namespace std;
-
 class tokenizer
 {
 public:
 	tokenizer();
 	~tokenizer();
-	vector<string> tokenize(const string &);
-	static string sanitize(string &);
+	std::vector<std::string> tokenize(const std::string &);
+	static std::string sanitize(std::string &);
 };
 

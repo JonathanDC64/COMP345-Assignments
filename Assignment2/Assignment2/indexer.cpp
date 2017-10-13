@@ -162,7 +162,18 @@ void removeStopWords(map<string, string>& dictionary) {
 }
 
 int main() {
-	map<string, string> dictionary;
+
+	std::string line;
+	std::ifstream fin("Doc1.txt");
+
+	while (std::getline(fin, line)) {
+		cout << line + '\n';
+	}
+
+	fin.close();
+
+
+	/*map<string, string> dictionary;
 	vector<string> documents;
 
 	readDocumentNames(documents);
@@ -173,7 +184,7 @@ int main() {
 	removeStopWords(dictionary);
 
 	output(dictionary, documents);
-	
+	*/
 	system("pause");
 	return 0;
 }

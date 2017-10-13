@@ -1,3 +1,5 @@
 
 Assignment1/Assignment1.VC.opendb
 .DS_Store
+*.log
+*.tlog

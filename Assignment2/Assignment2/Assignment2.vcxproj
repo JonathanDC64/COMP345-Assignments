@@ -19,11 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="document.cpp" />
     <ClCompile Include="indexer.cpp" />
     <ClCompile Include="stopword.cpp" />
+    <ClCompile Include="tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="document.h" />
     <ClInclude Include="stopword.h" />
+    <ClInclude Include="tokenizer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
