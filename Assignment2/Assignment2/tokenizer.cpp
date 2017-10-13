@@ -27,7 +27,7 @@ vector<string> tokenizer::tokenize(const string & document) {
 
 	return tokens;
 }
-
+// hey
 //Makes a word lower case and removes punctuation
 string tokenizer::sanitize(string & text) {
     const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
