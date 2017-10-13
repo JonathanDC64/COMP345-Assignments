@@ -13,7 +13,7 @@ tokenizer::~tokenizer()
 {
 }
 
-vector<string> tokenize(const string & document) {
+vector<string> tokenizer::tokenize(const string & document) {
 
 	vector<string> tokens;
 	string word;
@@ -29,7 +29,7 @@ vector<string> tokenize(const string & document) {
 }
 
 //Makes a word lower case and removes punctuation
-static string sanitize(string & text) {
+string tokenizer::sanitize(string & text) {
     const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
 	for (char &c : text) {
 		//make lowercase

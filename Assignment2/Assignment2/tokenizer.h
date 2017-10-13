@@ -9,7 +9,7 @@ class tokenizer
 public:
 	tokenizer();
 	~tokenizer();
-	vector<string> tokenize(string &);
+	vector<string> tokenize(const string &);
 	static string sanitize(string &);
 };
 
