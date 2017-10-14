@@ -22,7 +22,7 @@ document::document(const std::string & file_name)
 
 std::string document::name() const
 {
-	return this->name;
+	return this->document_name;
 }
 
 long document::size() const

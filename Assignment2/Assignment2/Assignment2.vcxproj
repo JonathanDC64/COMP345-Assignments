@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="document.cpp" />
     <ClCompile Include="indexer.cpp" />
+    <ClCompile Include="indexer_old.cpp" />
     <ClCompile Include="stopword.cpp" />
     <ClCompile Include="tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="document.h" />
+    <ClInclude Include="indexer.h" />
     <ClInclude Include="stopword.h" />
     <ClInclude Include="tokenizer.h" />
   </ItemGroup>

@@ -15,12 +15,12 @@ stopword::stopword(const std::string & file_name){
 	fin.close();
 }
 
-bool stopword::exists(const std::string & word)
+bool stopword::exists(const std::string & word) const
 {
 	return this->stopwords.find(word) != this->stopwords.end();
 }
 
-bool stopword::operator()(const std::string & word)
+bool stopword::operator()(const std::string & word) const
 {
 	return this->exists(word);
 }
