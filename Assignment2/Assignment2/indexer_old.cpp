@@ -166,7 +166,8 @@ int main() {
 
 
 	indexer idx;
-	idx.output_occurences();
+	//idx.output_occurences();
+	idx.output_occurences_filtered();
 
 	/*std::string line;
 	std::ifstream fin("Doc1.txt");

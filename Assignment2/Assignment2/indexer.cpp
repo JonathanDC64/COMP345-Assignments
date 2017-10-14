@@ -61,17 +61,17 @@ void indexer::printFullLine() const
 
 void indexer::output(bool filtered) const
 {
-	map<string, string> dictionary_copy(this->dictionary);
+	map<string, string> dictionary_copy = this->dictionary;
 
 	if (filtered) {
 		this->removeStopWords(dictionary_copy);
 	}
-
+	
 	printLegend();
 
 	vector<vector<int>> occurences;
 	for (document doc : documents) {
-		occurences.push_back(numOccurences(doc.name()));
+		occurences.push_back(numOccurences(dictionary_copy, doc.name()));
 	}
 
 	vector<int> totals(documents.size(), 0);
@@ -116,22 +116,22 @@ void indexer::generateDictionary()
 
 void indexer::removeStopWords(map<string, string>& dictionary) const
 {
-	map<string, string>::iterator it;
+
+	vector<string> removal_list;
 	for (pair<string, string> d : dictionary) {
-		
-		string word = d.second;
+		string word = d.first;
 
 		if (stopwords(word)) {
-			it = dictionary.find(word);
-
-			if (it != dictionary.end()) {
-				dictionary.erase(it);
-			}
+			removal_list.push_back(word);//dictionary.erase(word);
 		}
+	}
+
+	for (string word : removal_list) {
+		dictionary.erase(word);
 	}
 }
 
-vector<int> indexer::numOccurences(const string & filename) const
+vector<int> indexer::numOccurences(const map<string, string>& dictionary, const string & filename)
 {
 	//initialize an occurences list with the same size as the dictionary and make all their values 0
 	vector<int> occurences(dictionary.size(), 0);
@@ -140,7 +140,8 @@ vector<int> indexer::numOccurences(const string & filename) const
 	string word;
 
 	while (fin >> word) {
-		map<string, string>::const_iterator it = this->dictionary.find(word);
+		word = tokenizer::sanitize(word);
+		map<string, string>::const_iterator it = dictionary.find(word);
 		//only add occurence if word is in the dictionary
 		if (it != dictionary.end()) {
 			//find the index of the word in the map

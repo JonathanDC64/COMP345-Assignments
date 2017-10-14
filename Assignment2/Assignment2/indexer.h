@@ -37,6 +37,6 @@ private:
 	void output(bool filtered) const;
 
 	void removeStopWords(map<string, string>& dictionary) const;
-	vector<int> numOccurences(const string &filename) const;
+	static vector<int> numOccurences(const map<string, string>& dictionary, const string &filename);
 };
 
