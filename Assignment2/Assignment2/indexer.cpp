@@ -11,8 +11,8 @@
 indexer::indexer()
 	: stopwords(STOPWORD_FILENAME.c_str())
 {
-	std::ifstream fin(this->INDEX_FILENAME.c_str());
-	std::string filename;
+	ifstream fin(this->INDEX_FILENAME.c_str());
+	string filename;
 
 	while (fin >> filename) {
 		document d(filename);
@@ -20,7 +20,7 @@ indexer::indexer()
 	}
 	this->N = documents.size();
 	this->generateDictionary();
-	this->numOccurences();
+	this->compute();
 }
 
 
@@ -35,23 +35,23 @@ unsigned int indexer::size() const
 
 void indexer::print_legend() const
 {
-	printFullLine();
-	cout << "| " << left << setw(biggestWordLength) << "Dictionary" << " |";
+	print_full_line();
+	cout << "| " << left << setw(biggest_word_length) << "Dictionary" << " |";
 	for (int i = 0; i<documents.size(); i++) {
 		cout << " " + documents[i].name() + " |";
 		cout << " " + documents[i].name() + "(weight) |";
 	} 
 	cout << " df_t |";
 	cout << endl;
-	printFullLine();
+	print_full_line();
 }
 
 const int dtf_size = 5;
 const int wtd_size = 8;
 
-void indexer::printFullLine() const
+void indexer::print_full_line() const
 {
-	for (int i = 0; i<biggestWordLength + 4; i++) {
+	for (int i = 0; i<biggest_word_length + 4; i++) {
 		cout << "-";
 	}
 	for (int i = 0; i<documents.size(); i++) {
@@ -77,7 +77,7 @@ void indexer::output() const
 	vector<int> totals(documents.size(), 0);
 	int row = 0;
 	for (pair<string, string> dict : this->dictionary) {
-		cout << "| " << left << setw(biggestWordLength) << dict.second << " |";
+		cout << "| " << left << setw(biggest_word_length) << dict.second << " |";
 		for (int i = 0; i < documents.size(); ++i) {
 			cout << setw(documents[i].name().size() + 1) << right << this->occurences[i][row] << " |";
 			cout << setw(documents[i].name().size() + 1 + wtd_size) << right << setprecision(2) << this->weights[i][row] << " |";
@@ -88,15 +88,15 @@ void indexer::output() const
 		row++;
 	}
 
-	printFullLine();
-	cout << "| " << left << setw(biggestWordLength) << "Totals" << " |";
+	print_full_line();
+	cout << "| " << left << setw(biggest_word_length) << "Totals" << " |";
 	for (int i = 0; i < totals.size(); ++i) {
 		cout << setw(documents[i].name().size() + 1) << right << totals[i] << " |";
 		cout << string(documents[i].name().size() + wtd_size + 1, ' ') << " |";
 	}
 	cout << string(dtf_size, ' ') << " |";
 	cout << endl;
-	printFullLine();
+	print_full_line();
 	cout << endl;
 }
 
@@ -104,21 +104,21 @@ void indexer::generateDictionary()
 {
 	tokenizer t;
 	for (document doc : this->documents) {
-		std::vector<std::string> tokens = t.tokenize(doc.name());
-		for (std::string token : tokens) {
+		vector<string> tokens = t.tokenize(doc.name());
+		for (string token : tokens) {
 			this->dictionary.insert(pair<string, string>(token, token));
 		}
 	}
 
 	for (pair<string, string> d : this->dictionary) {
 		string token = d.first;
-		if (token.length() > biggestWordLength) {
-			biggestWordLength = token.length();
+		if (token.length() > biggest_word_length) {
+			biggest_word_length = token.length();
 		}
 	}
 }
 
-void indexer::removeStopWords()
+void indexer::remove_stop_words()
 {
 	vector<string> removal_list;
 	for (pair<string, string> d : this->dictionary) {
@@ -133,7 +133,7 @@ void indexer::removeStopWords()
 		this->dictionary.erase(word);
 	}
 
-	this->numOccurences();
+	this->compute();
 }
 
 vector<query_result> indexer::query(string search, int n)
@@ -156,7 +156,12 @@ vector<query_result> indexer::query(string search, int n)
 	return top_results;
 }
 
-void indexer::numOccurences()
+document indexer::operator[](int index)
+{
+	return documents[index];
+}
+
+void indexer::compute()
 {
 	this->occurences.clear();
 	this->document_frequency = vector<int>(this->dictionary.size(), 0);

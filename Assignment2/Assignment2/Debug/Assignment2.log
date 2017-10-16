@@ -1,12 +1,2 @@
-﻿  indexer.cpp
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(40): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(54): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(57): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(59): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(81): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(93): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(143): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(151): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(189): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(192): warning C4018: '<': signed/unsigned mismatch
+﻿  googler.cpp
   Assignment2.vcxproj -> D:\COMP345-Assignments\Assignment2\Debug\Assignment2.exe
