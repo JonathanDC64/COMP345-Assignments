@@ -2,10 +2,12 @@
 #include "tokenizer.h"
 #include "stopword.h"
 #include "document.h"
+#include "query_result.h"
 #include <string>
 #include <fstream>
 #include <map>
 #include <iostream>
+
 
 using namespace std;
 
@@ -16,9 +18,9 @@ public:
 	indexer();
 	~indexer();
 	unsigned int size() const;
-	int normalize();
 	void output() const;
 	void removeStopWords();
+	vector<query_result> query(string search, int n = 10);
 private:
 	int N; //Document count
 	const string STOPWORD_FILENAME = "stopwords.txt";
@@ -41,6 +43,9 @@ private:
 	
 	void numOccurences();
 
-	double calc_weight(int term_fequency, int document_frequency);
+	double normalize(int term_fequency, int document_frequency);
+	double indexer::score(string & query, int document_index);
+
+	double indexer::cosine_similarity(const vector<double> & q, const vector<double> & d);
 };
 

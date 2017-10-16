@@ -3,6 +3,9 @@
 #include <sstream>
 #include <iomanip>
 #include <math.h>
+#include <numeric>
+#include <functional> 
+#include <algorithm>
 
 
 indexer::indexer()
@@ -133,6 +136,11 @@ void indexer::removeStopWords()
 	this->numOccurences();
 }
 
+vector<query_result> indexer::query(string search, int n)
+{
+	return vector<query_result>();
+}
+
 void indexer::numOccurences()
 {
 	this->occurences.clear();
@@ -167,16 +175,52 @@ void indexer::numOccurences()
 		vector<double> weight(this->dictionary.size(), 0.0);
 		//calculate weight
 		for (int j = 0; j < this->dictionary.size(); j++) {
-			weight[j] = indexer::calc_weight(this->occurences[i][j], this->document_frequency[j]);
+			weight[j] = indexer::normalize(this->occurences[i][j], this->document_frequency[j]);
 		}
 
 		this->weights.push_back(weight);
 	}
+
 }
 
-double indexer::calc_weight(int term_fequency, int document_frequency)
+double indexer::normalize(int term_frequency, int document_frequency)
 {
-	return term_fequency != 0 ? (1 + log10((double)term_fequency)) * log10((double)this->N / (double)document_frequency) : 0;
+	return (term_frequency > 0) ? ( 1 + log10((double)term_frequency)) * log10((double)this->N / (double)document_frequency) : 0;
+}
+
+double indexer::score(string & query, int document_index)
+{
+	vector<string> query_tokens = tokenizer::tokenize_string(query);
+	vector<double> q(this->dictionary.size(), 0.0);
+	vector<double> d = this->weights[document_index];
+
+	for (string token : query_tokens) {
+		map<string, string>::iterator it = this->dictionary.find(token);
+		//only add occurence if word is in the dictionary
+		if (it != dictionary.end()) {
+			//find the index of the word in the map
+			int index = distance(this->dictionary.begin(), it);
+			q[index] = this->weights[document_index][index];
+		}
+	}
+	
+	//double numerator = inner_product(q.begin(), q.end(), d.begin(), 0.0);
+	//double denominator = sqrt(for_each(q.begin(), q.end(), 0.0, std::square_acc ));
+
+	double cos_sim = this->cosine_similarity(q, d);
+
+	return cos_sim;
+}
+
+double indexer::cosine_similarity(const vector<double> & q, const vector<double> & d)
+{
+	double dot = 0.0, denom_a = 0.0, denom_b = 0.0;
+	for (unsigned int i = 0u; i < q.size(); ++i) {
+		dot += q[i] * d[i];
+		denom_a += q[i] * q[i];
+		denom_b += d[i] * d[i];
+	}
+	return dot / (sqrt(denom_a) * sqrt(denom_b));
 }
 
 
