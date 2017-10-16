@@ -243,6 +243,10 @@ void operator>>(document & d, indexer & idx)
 {
 	idx.documents.push_back(d);
 }
+
+document & indexer::operator[](int index) {
+	return this->documents[index];
+}
 /*
 int main() {
 	indexer idx;
