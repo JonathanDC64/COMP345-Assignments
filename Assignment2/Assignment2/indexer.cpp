@@ -156,11 +156,6 @@ vector<query_result> indexer::query(string search, int n)
 	return top_results;
 }
 
-document & indexer::operator[](int index)
-{
-	return documents[index];
-}
-
 void indexer::compute()
 {
 	this->occurences.clear();
