@@ -1,6 +1,9 @@
 #include "indexer.h"
 #include <fstream>
+#include <sstream>
 #include <iomanip>
+#include <math.h>
+
 
 indexer::indexer()
 	: stopwords(STOPWORD_FILENAME.c_str())
@@ -12,7 +15,9 @@ indexer::indexer()
 		document d(filename);
 		d >> *this;
 	}
+	this->N = documents.size();
 	this->generateDictionary();
+	this->numOccurences();
 }
 
 
@@ -25,25 +30,21 @@ unsigned int indexer::size() const
 	return this->documents.size();
 }
 
-void indexer::output_occurences() const
-{
-	this->output(false);
-}
-
-void indexer::output_occurences_filtered() const
-{
-	this->output(true);
-}
-
-void indexer::printLegend() const
+void indexer::print_legend() const
 {
 	printFullLine();
 	cout << "| " << left << setw(biggestWordLength) << "Dictionary" << " |";
 	for (int i = 0; i<documents.size(); i++) {
 		cout << " " + documents[i].name() + " |";
-	} cout << endl;
+		cout << " " + documents[i].name() + "(weight) |";
+	} 
+	cout << " df_t |";
+	cout << endl;
 	printFullLine();
 }
+
+const int dtf_size = 5;
+const int wtd_size = 8;
 
 void indexer::printFullLine() const
 {
@@ -52,36 +53,34 @@ void indexer::printFullLine() const
 	}
 	for (int i = 0; i<documents.size(); i++) {
 		cout << "-";
-		for (int j = 0; j<documents[i].name().size(); j++) {
+		for (int j = 0; j< ((documents[i].name().size() + 2) * 2) + wtd_size; j++) {
 			cout << "-";
 		}
-		cout << "--";
-	} cout << endl;
+
+		cout << "-";
+	} 
+
+	for (int i = 0; i < dtf_size; i++) {
+		cout << "-";
+	}
+	cout << "--";
+	cout << endl;
 }
 
-void indexer::output(bool filtered) const
+void indexer::output() const
 {
-	map<string, string> dictionary_copy = this->dictionary;
-
-	if (filtered) {
-		this->removeStopWords(dictionary_copy);
-	}
-	
-	printLegend();
-
-	vector<vector<int>> occurences;
-	for (document doc : documents) {
-		occurences.push_back(numOccurences(dictionary_copy, doc.name()));
-	}
-
+	print_legend();
+	cout << showpoint;
 	vector<int> totals(documents.size(), 0);
 	int row = 0;
-	for (pair<string, string> dict : dictionary_copy) {
+	for (pair<string, string> dict : this->dictionary) {
 		cout << "| " << left << setw(biggestWordLength) << dict.second << " |";
-		for (int i = 0; i < occurences.size(); ++i) {
-			cout << setw(documents[i].name().size() + 1) << right << occurences[i][row] << " |";
-			totals[i] += occurences[i][row];
+		for (int i = 0; i < documents.size(); ++i) {
+			cout << setw(documents[i].name().size() + 1) << right << this->occurences[i][row] << " |";
+			cout << setw(documents[i].name().size() + 1 + wtd_size) << right << setprecision(2) << this->weights[i][row] << " |";
+			totals[i] += this->occurences[i][row];
 		}
+		cout << setw(dtf_size) << right  << this->document_frequency[row] << " |";
 		cout << endl;
 		row++;
 	}
@@ -90,7 +89,9 @@ void indexer::output(bool filtered) const
 	cout << "| " << left << setw(biggestWordLength) << "Totals" << " |";
 	for (int i = 0; i < totals.size(); ++i) {
 		cout << setw(documents[i].name().size() + 1) << right << totals[i] << " |";
+		cout << string(documents[i].name().size() + wtd_size + 1, ' ') << " |";
 	}
+	cout << string(dtf_size, ' ') << " |";
 	cout << endl;
 	printFullLine();
 	cout << endl;
@@ -106,7 +107,7 @@ void indexer::generateDictionary()
 		}
 	}
 
-	for (pair<string, string> d : dictionary) {
+	for (pair<string, string> d : this->dictionary) {
 		string token = d.first;
 		if (token.length() > biggestWordLength) {
 			biggestWordLength = token.length();
@@ -114,11 +115,10 @@ void indexer::generateDictionary()
 	}
 }
 
-void indexer::removeStopWords(map<string, string>& dictionary) const
+void indexer::removeStopWords()
 {
-
 	vector<string> removal_list;
-	for (pair<string, string> d : dictionary) {
+	for (pair<string, string> d : this->dictionary) {
 		string word = d.first;
 
 		if (stopwords(word)) {
@@ -127,35 +127,69 @@ void indexer::removeStopWords(map<string, string>& dictionary) const
 	}
 
 	for (string word : removal_list) {
-		dictionary.erase(word);
+		this->dictionary.erase(word);
+	}
+
+	this->numOccurences();
+}
+
+void indexer::numOccurences()
+{
+	this->occurences.clear();
+	this->document_frequency = vector<int>(this->dictionary.size(), 0);
+	this->weights.clear();
+	
+	for (document doc : documents) {
+		vector<int> occurence(this->dictionary.size(), 0);
+		vector<bool> frequents(this->dictionary.size(), false);
+
+		string word;
+		istringstream iss(doc.content());
+
+		while (iss >> word) {
+			word = tokenizer::sanitize(word);
+			map<string, string>::iterator it = dictionary.find(word);
+			//only add occurence if word is in the dictionary
+			if (it != dictionary.end()) {
+				//find the index of the word in the map
+				int index = distance(this->dictionary.begin(), it);
+				occurence[index]++;
+				if (!frequents[index]) {
+					frequents[index] = true;
+					this->document_frequency[index]++;
+				}
+			}
+		}
+		this->occurences.push_back(occurence);
+	}
+
+	for (int i = 0; i < this->documents.size(); i++) {
+		vector<double> weight(this->dictionary.size(), 0.0);
+		//calculate weight
+		for (int j = 0; j < this->dictionary.size(); j++) {
+			weight[j] = indexer::calc_weight(this->occurences[i][j], this->document_frequency[j]);
+		}
+
+		this->weights.push_back(weight);
 	}
 }
 
-vector<int> indexer::numOccurences(const map<string, string>& dictionary, const string & filename)
+double indexer::calc_weight(int term_fequency, int document_frequency)
 {
-	//initialize an occurences list with the same size as the dictionary and make all their values 0
-	vector<int> occurences(dictionary.size(), 0);
-
-	ifstream fin(filename.c_str());
-	string word;
-
-	while (fin >> word) {
-		word = tokenizer::sanitize(word);
-		map<string, string>::const_iterator it = dictionary.find(word);
-		//only add occurence if word is in the dictionary
-		if (it != dictionary.end()) {
-			//find the index of the word in the map
-			int index = distance(dictionary.begin(), it);
-			occurences[index]++;
-		}
-	}
-
-	fin.close();
-	return occurences;
+	return term_fequency != 0 ? (1 + log10((double)term_fequency)) * log10((double)this->N / (double)document_frequency) : 0;
 }
 
 
 void operator>>(document & d, indexer & idx)
 {
 	idx.documents.push_back(d);
+}
+
+int main() {
+	indexer idx;
+	idx.output();
+	idx.removeStopWords();
+	idx.output();
+	system("pause");
+	return 0;
 }

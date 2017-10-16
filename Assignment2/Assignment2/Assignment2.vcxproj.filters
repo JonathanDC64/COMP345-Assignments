@@ -24,9 +24,6 @@
     <ClCompile Include="document.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="indexer_old.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="indexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -17,10 +17,10 @@ public:
 	~indexer();
 	unsigned int size() const;
 	int normalize();
-	void output_occurences() const;
-	void output_occurences_filtered() const;
+	void output() const;
+	void removeStopWords();
 private:
-	static const int N = 10; //Document count
+	int N; //Document count
 	const string STOPWORD_FILENAME = "stopwords.txt";
 	const string INDEX_FILENAME = "index.txt";
 	const stopword stopwords;
@@ -29,14 +29,18 @@ private:
 
 	vector<document> documents;
 	map<string, string> dictionary;
+	vector<vector<int>> occurences;
+	vector<int> document_frequency;
+	vector<vector<double>> weights;
+
 
 	void generateDictionary();
 
-	void printLegend() const;
+	void print_legend() const;
 	void printFullLine() const;
-	void output(bool filtered) const;
+	
+	void numOccurences();
 
-	void removeStopWords(map<string, string>& dictionary) const;
-	static vector<int> numOccurences(const map<string, string>& dictionary, const string &filename);
+	double calc_weight(int term_fequency, int document_frequency);
 };
 
