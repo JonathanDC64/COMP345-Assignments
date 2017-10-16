@@ -21,7 +21,7 @@ public:
 	void output() const;
 	void remove_stop_words();
 	vector<query_result> query(string search, int n = 10);
-	document operator[](int index);
+	document & operator[](int index);
 private:
 	int N; //Document count
 	const string STOPWORD_FILENAME = "stopwords.txt";

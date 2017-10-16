@@ -156,7 +156,7 @@ vector<query_result> indexer::query(string search, int n)
 	return top_results;
 }
 
-document indexer::operator[](int index)
+document & indexer::operator[](int index)
 {
 	return documents[index];
 }
@@ -247,6 +247,10 @@ double indexer::cosine_similarity(const vector<double> & q, const vector<double>
 void operator>>(document & d, indexer & idx)
 {
 	idx.documents.push_back(d);
+}
+
+document & indexer::operator[](int index) {
+	return this->documents[index];
 }
 /*
 int main() {
