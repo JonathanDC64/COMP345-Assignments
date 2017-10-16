@@ -24,3 +24,9 @@ bool stopword::operator()(const std::string & word) const
 {
 	return this->exists(word);
 }
+
+std::ostream & operator<<(std::ostream & os, const stopword & sw)
+{
+	os << "Num. stopwords: " << sw.stopwords.size();
+	return os;
+}

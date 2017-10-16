@@ -244,9 +244,17 @@ void operator>>(document & d, indexer & idx)
 	idx.documents.push_back(d);
 }
 
+std::ostream & operator<<(std::ostream & os, const indexer & idx)
+{
+	os << "Dictionary terms : " << idx.dictionary.size() << " Num. Documents: " << idx.size();
+	return os;
+}
+
 document & indexer::operator[](int index) {
 	return this->documents[index];
 }
+
+
 /*
 int main() {
 	indexer idx;

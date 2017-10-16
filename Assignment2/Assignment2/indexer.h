@@ -14,6 +14,7 @@ using namespace std;
 class indexer
 {
 	friend void operator>>(document & d, indexer & idx);
+	friend std::ostream& operator<<(std::ostream& os, const indexer & idx);
 public:
 	indexer();
 	~indexer();

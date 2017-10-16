@@ -34,3 +34,9 @@ std::string document::content() const
 {
 	return this->document_content;
 }
+
+std::ostream & operator<<(std::ostream & os, const document & doc)
+{
+	os << "Name: " << doc.name() << " Size: " << doc.size();
+	return os;
+}

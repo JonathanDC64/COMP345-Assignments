@@ -19,21 +19,15 @@ int main() {
 		cout << "Ranked search Results: " << endl;
 		cout << endl;
 		cout <<
-			setw(15) << left << "Doc. Name:" <<
-			setw(10) << right << "Score:" <<
+			setw(15) << left << "Doc. Name" <<
+			setw(13) << right << "Score" <<
 			endl;
 
 		int pos = 1;
 		for (query_result result : results) {
 			
-
-			cout << 
-				setw(15) << left << 
-				(to_string(pos) + ": " + result.found_document.name()) << 
-				"|" <<
-				setw(10) << right << setprecision(4) <<
-				result.score <<
-				endl;
+			cout << to_string(pos) + ": ";
+			cout << result;
 
 			pos++;
 		}
@@ -50,16 +44,6 @@ int main() {
 
 		cout << endl;
 	} while (again);
-
-	/*cout << "Please enter a search query : ";
-	string query;
-	getline(cin, query);
-
-	vector<query_result> result = idx.query(query);
-	
-	for (query_result qr : result) {
-		cout << qr.found_document.name() << "  score: " << qr.score << endl;
-	}*/
 
 	system("pause");
 	return 0;

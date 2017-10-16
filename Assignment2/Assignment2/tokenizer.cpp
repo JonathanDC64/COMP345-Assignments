@@ -57,4 +57,8 @@ std::string tokenizer::sanitize(std::string & text) {
 	return text;
 }
 
-
+std::ostream & operator<<(std::ostream & os, const tokenizer & tk)
+{
+	os << "Splits contents of string or file into lowercase tokens";
+	return os;
+}

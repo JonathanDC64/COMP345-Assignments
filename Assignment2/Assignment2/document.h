@@ -4,6 +4,7 @@
 
 class document
 {
+	friend std::ostream& operator<<(std::ostream& os, const document & doc);
 public:
 	document();
 	~document();
@@ -11,6 +12,7 @@ public:
 	std::string name() const;
 	long size() const;
 	std::string content() const;
+
 private:
 	std::string document_name;
 	std::string document_content;

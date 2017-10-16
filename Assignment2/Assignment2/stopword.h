@@ -5,6 +5,7 @@
 
 class stopword
 {
+	friend std::ostream& operator<<(std::ostream& os, const stopword & sw);
 public:
 	stopword();
 	stopword(const std::string & file_name);
