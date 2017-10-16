@@ -30,6 +30,9 @@
     <ClCompile Include="query_result.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="googler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stopword.h">

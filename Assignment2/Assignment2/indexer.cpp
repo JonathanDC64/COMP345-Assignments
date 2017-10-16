@@ -21,7 +21,6 @@ indexer::indexer()
 	this->N = documents.size();
 	this->generateDictionary();
 	this->numOccurences();
-	query("called for from");
 }
 
 
@@ -140,6 +139,7 @@ void indexer::removeStopWords()
 vector<query_result> indexer::query(string search, int n)
 {
 	vector<query_result> results;
+
 	for (int i = 0; i < documents.size(); i++) {
 		double score = this->score(search, i);
 		document doc = documents[i];
@@ -147,7 +147,13 @@ vector<query_result> indexer::query(string search, int n)
 		results.push_back(result);
 	}
 	sort(results.begin(), results.end(), gtScore);
-	return results;
+
+	if (results.size() < n) {
+		n = results.size();
+	}
+
+	vector<query_result> top_results(results.begin(), results.begin() + n);
+	return top_results;
 }
 
 void indexer::numOccurences()
@@ -218,7 +224,7 @@ double indexer::score(string & query, int document_index)
 
 	double cos_sim = this->cosine_similarity(q, d);
 
-	return cos_sim;
+	return cos_sim >= 0 ? cos_sim = this->cosine_similarity(q, d) : 0;
 }
 
 double indexer::cosine_similarity(const vector<double> & q, const vector<double> & d)
@@ -237,7 +243,7 @@ void operator>>(document & d, indexer & idx)
 {
 	idx.documents.push_back(d);
 }
-
+/*
 int main() {
 	indexer idx;
 	idx.output();
@@ -245,4 +251,4 @@ int main() {
 	idx.output();
 	system("pause");
 	return 0;
-}
+}*/

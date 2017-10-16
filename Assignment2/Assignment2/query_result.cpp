@@ -8,7 +8,7 @@ query_result::query_result(const document & found_document, const double score)
 
 bool gtScore(const query_result & left, const query_result & right)
 {
-	return left.score >= right.score;
+	return left.score > right.score;
 }
 
 

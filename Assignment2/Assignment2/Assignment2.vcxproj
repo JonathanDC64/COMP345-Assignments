@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="document.cpp" />
+    <ClCompile Include="googler.cpp" />
     <ClCompile Include="indexer.cpp" />
     <ClCompile Include="query_result.cpp" />
     <ClCompile Include="stopword.cpp" />
