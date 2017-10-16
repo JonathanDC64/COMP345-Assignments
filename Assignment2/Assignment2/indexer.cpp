@@ -7,6 +7,7 @@
 #include <functional> 
 #include <algorithm>
 
+using namespace std;
 
 indexer::indexer()
 	: stopwords(STOPWORD_FILENAME.c_str())
@@ -21,11 +22,6 @@ indexer::indexer()
 	this->N = documents.size();
 	this->generateDictionary();
 	this->compute();
-}
-
-
-indexer::~indexer()
-{
 }
 
 unsigned int indexer::size() const
@@ -134,6 +130,11 @@ void indexer::remove_stop_words()
 	}
 
 	this->compute();
+}
+
+bool gtScore(const query_result & left, const query_result & right)
+{
+	return left.score > right.score;
 }
 
 vector<query_result> indexer::query(string search, int n)

@@ -1,0 +1,94 @@
+\hypertarget{classindexer}{}\section{indexer Class Reference}
+\label{classindexer}\index{indexer@{indexer}}
+
+
+{\ttfamily \#include $<$indexer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classindexer_acbbcbad080a7ae43ed78840fcf006960}{indexer} ()
+\item 
+unsigned int \hyperlink{classindexer_a227b90870b8807668485754e402b8a60}{size} () const
+\item 
+void \hyperlink{classindexer_af84f1ddc60859b7d007699ee011abf36}{output} () const
+\item 
+void \hyperlink{classindexer_afdaec83c53cbc4df71436a4c936a2e89}{remove\+\_\+stop\+\_\+words} ()
+\item 
+vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ \hyperlink{classindexer_ae72394af5bf9eb84cf2b245f19d8cf27}{query} (string search, int n=10)
+\item 
+\hyperlink{classdocument}{document} \& \hyperlink{classindexer_a1ef6a5497d341fdbbae13bb26a66c37a}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classindexer_a0fe0af7a5ec91ffbe15a2a89d11fe038}{operator$>$$>$} (\hyperlink{classdocument}{document} \&d, \hyperlink{classindexer}{indexer} \&idx)
+\item 
+std\+::ostream \& \hyperlink{classindexer_afbe836c0f0a47dc1393416275175fadb}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classindexer}{indexer} \&idx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The indexer is responsible for storing and maintaining your document index 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classindexer_acbbcbad080a7ae43ed78840fcf006960}\label{classindexer_acbbcbad080a7ae43ed78840fcf006960}} 
+\index{indexer@{indexer}!indexer@{indexer}}
+\index{indexer@{indexer}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{indexer()}{indexer()}}
+{\footnotesize\ttfamily indexer\+::indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default construct creates an indexer with static index file 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classindexer_a1ef6a5497d341fdbbae13bb26a66c37a}\label{classindexer_a1ef6a5497d341fdbbae13bb26a66c37a}} 
+\index{indexer@{indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \hyperlink{classdocument}{document} \& indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Retrieves an indexed document at the specified index \mbox{\Hypertarget{classindexer_af84f1ddc60859b7d007699ee011abf36}\label{classindexer_af84f1ddc60859b7d007699ee011abf36}} 
+\index{indexer@{indexer}!output@{output}}
+\index{output@{output}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily void indexer\+::output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Displays all terms, their fequency, their weight and document frequency to standard output \mbox{\Hypertarget{classindexer_ae72394af5bf9eb84cf2b245f19d8cf27}\label{classindexer_ae72394af5bf9eb84cf2b245f19d8cf27}} 
+\index{indexer@{indexer}!query@{query}}
+\index{query@{query}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ indexer\+::query (\begin{DoxyParamCaption}\item[{string}]{search,  }\item[{int}]{n = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+searches the dictionary and documents for certain keywords \mbox{\Hypertarget{classindexer_afdaec83c53cbc4df71436a4c936a2e89}\label{classindexer_afdaec83c53cbc4df71436a4c936a2e89}} 
+\index{indexer@{indexer}!remove\+\_\+stop\+\_\+words@{remove\+\_\+stop\+\_\+words}}
+\index{remove\+\_\+stop\+\_\+words@{remove\+\_\+stop\+\_\+words}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{remove\+\_\+stop\+\_\+words()}{remove\_stop\_words()}}
+{\footnotesize\ttfamily void indexer\+::remove\+\_\+stop\+\_\+words (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all stopword terms from the dictionary \mbox{\Hypertarget{classindexer_a227b90870b8807668485754e402b8a60}\label{classindexer_a227b90870b8807668485754e402b8a60}} 
+\index{indexer@{indexer}!size@{size}}
+\index{size@{size}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily unsigned int indexer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gives the number of documents processed by the index 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classindexer_afbe836c0f0a47dc1393416275175fadb}\label{classindexer_afbe836c0f0a47dc1393416275175fadb}} 
+\index{indexer@{indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classindexer}{indexer} \&}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Sends the number of terms in the dictionary and the number of documents to an output stream \mbox{\Hypertarget{classindexer_a0fe0af7a5ec91ffbe15a2a89d11fe038}\label{classindexer_a0fe0af7a5ec91ffbe15a2a89d11fe038}} 
+\index{indexer@{indexer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily void operator$>$$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{classdocument}{document} \&}]{d,  }\item[{\hyperlink{classindexer}{indexer} \&}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Adds a document file to an indexer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+indexer.\+h\item 
+indexer.\+cpp\end{DoxyCompactItemize}
