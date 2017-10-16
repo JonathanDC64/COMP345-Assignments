@@ -1,10 +1,11 @@
 ﻿  indexer.cpp
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(42): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(56): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(59): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(61): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(83): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(95): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(176): warning C4018: '<': signed/unsigned mismatch
-d:\comp345-assignments\assignment2\assignment2\indexer.cpp(179): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(41): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(55): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(58): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(60): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(82): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(94): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(143): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(183): warning C4018: '<': signed/unsigned mismatch
+d:\comp345-assignments\assignment2\assignment2\indexer.cpp(186): warning C4018: '<': signed/unsigned mismatch
   Assignment2.vcxproj -> D:\COMP345-Assignments\Assignment2\Debug\Assignment2.exe

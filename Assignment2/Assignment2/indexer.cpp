@@ -21,6 +21,7 @@ indexer::indexer()
 	this->N = documents.size();
 	this->generateDictionary();
 	this->numOccurences();
+	query("called for from");
 }
 
 
@@ -138,7 +139,15 @@ void indexer::removeStopWords()
 
 vector<query_result> indexer::query(string search, int n)
 {
-	return vector<query_result>();
+	vector<query_result> results;
+	for (int i = 0; i < documents.size(); i++) {
+		double score = this->score(search, i);
+		document doc = documents[i];
+		query_result result(doc, score);
+		results.push_back(result);
+	}
+	sort(results.begin(), results.end(), gtScore);
+	return results;
 }
 
 void indexer::numOccurences()
