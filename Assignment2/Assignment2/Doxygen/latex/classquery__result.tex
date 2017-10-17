@@ -3,8 +3,9 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classquery__result_a957a24bae5c9fcf83099d7fa2ece2647}\label{classquery__result_a957a24bae5c9fcf83099d7fa2ece2647}} 
-{\bfseries query\+\_\+result} (const \hyperlink{classdocument}{document} \&found\+\_\+document, const double score)
+\hyperlink{classquery__result_a957a24bae5c9fcf83099d7fa2ece2647}{query\+\_\+result} (const \hyperlink{classdocument}{document} \&found\+\_\+document, const double score)
+\item 
+\hyperlink{classquery__result_a85eee76ed372ad28ab7347053633714a}{$\sim$query\+\_\+result} ()
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -18,13 +19,33 @@ double {\bfseries score}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classquery__result_af90a86217251694caa9471be14515ee9}\label{classquery__result_af90a86217251694caa9471be14515ee9}} 
-bool {\bfseries gt\+Score} (const \hyperlink{classquery__result}{query\+\_\+result} \&left, const \hyperlink{classquery__result}{query\+\_\+result} \&right)
-\item 
-\mbox{\Hypertarget{classquery__result_aa97ddcf5d38eaf8c7160b9fe609170f5}\label{classquery__result_aa97ddcf5d38eaf8c7160b9fe609170f5}} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classquery__result}{query\+\_\+result} \&qr)
+std\+::ostream \& \hyperlink{classquery__result_aa97ddcf5d38eaf8c7160b9fe609170f5}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classquery__result}{query\+\_\+result} \&qr)
 \end{DoxyCompactItemize}
 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classquery__result_a957a24bae5c9fcf83099d7fa2ece2647}\label{classquery__result_a957a24bae5c9fcf83099d7fa2ece2647}} 
+\index{query\+\_\+result@{query\+\_\+result}!query\+\_\+result@{query\+\_\+result}}
+\index{query\+\_\+result@{query\+\_\+result}!query\+\_\+result@{query\+\_\+result}}
+\subsubsection{\texorpdfstring{query\+\_\+result()}{query\_result()}}
+{\footnotesize\ttfamily query\+\_\+result\+::query\+\_\+result (\begin{DoxyParamCaption}\item[{const \hyperlink{classdocument}{document} \&}]{found\+\_\+document,  }\item[{const double}]{score }\end{DoxyParamCaption})}
+
+constructs a \hyperlink{classquery__result}{query\+\_\+result} using a document and its score \mbox{\Hypertarget{classquery__result_a85eee76ed372ad28ab7347053633714a}\label{classquery__result_a85eee76ed372ad28ab7347053633714a}} 
+\index{query\+\_\+result@{query\+\_\+result}!````~query\+\_\+result@{$\sim$query\+\_\+result}}
+\index{````~query\+\_\+result@{$\sim$query\+\_\+result}!query\+\_\+result@{query\+\_\+result}}
+\subsubsection{\texorpdfstring{$\sim$query\+\_\+result()}{~query\_result()}}
+{\footnotesize\ttfamily query\+\_\+result\+::$\sim$query\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classquery__result_aa97ddcf5d38eaf8c7160b9fe609170f5}\label{classquery__result_aa97ddcf5d38eaf8c7160b9fe609170f5}} 
+\index{query\+\_\+result@{query\+\_\+result}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!query\+\_\+result@{query\+\_\+result}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classquery__result}{query\+\_\+result} \&}]{qr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints the name of the document with its score 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

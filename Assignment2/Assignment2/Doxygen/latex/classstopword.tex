@@ -3,22 +3,67 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstopword_accb49b6c9d5ddc75002348a869df5619}\label{classstopword_accb49b6c9d5ddc75002348a869df5619}} 
-{\bfseries stopword} (const std\+::string \&file\+\_\+name)
+\hyperlink{classstopword_a27bd1c2cc2608cc3fef800a6e1c2edd6}{stopword} ()
 \item 
-\mbox{\Hypertarget{classstopword_a11210085752c2b3d63055490c13b6666}\label{classstopword_a11210085752c2b3d63055490c13b6666}} 
-bool {\bfseries exists} (const std\+::string \&word) const
+\hyperlink{classstopword_accb49b6c9d5ddc75002348a869df5619}{stopword} (const std\+::string \&file\+\_\+name)
 \item 
-\mbox{\Hypertarget{classstopword_a0bee2c17bb62af157dae20b9242805aa}\label{classstopword_a0bee2c17bb62af157dae20b9242805aa}} 
-bool {\bfseries operator()} (const std\+::string \&word) const
+\hyperlink{classstopword_aee102291edf88348aad736a35c961fdf}{$\sim$stopword} ()
+\item 
+bool \hyperlink{classstopword_a11210085752c2b3d63055490c13b6666}{exists} (const std\+::string \&word) const
+\item 
+bool \hyperlink{classstopword_a0bee2c17bb62af157dae20b9242805aa}{operator()} (const std\+::string \&word) const
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstopword_a80e1d6c776f6a931100b5ea063e3a6ea}\label{classstopword_a80e1d6c776f6a931100b5ea063e3a6ea}} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classstopword}{stopword} \&sw)
+std\+::ostream \& \hyperlink{classstopword_a80e1d6c776f6a931100b5ea063e3a6ea}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classstopword}{stopword} \&sw)
 \end{DoxyCompactItemize}
 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstopword_a27bd1c2cc2608cc3fef800a6e1c2edd6}\label{classstopword_a27bd1c2cc2608cc3fef800a6e1c2edd6}} 
+\index{stopword@{stopword}!stopword@{stopword}}
+\index{stopword@{stopword}!stopword@{stopword}}
+\subsubsection{\texorpdfstring{stopword()}{stopword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily stopword\+::stopword (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classstopword_accb49b6c9d5ddc75002348a869df5619}\label{classstopword_accb49b6c9d5ddc75002348a869df5619}} 
+\index{stopword@{stopword}!stopword@{stopword}}
+\index{stopword@{stopword}!stopword@{stopword}}
+\subsubsection{\texorpdfstring{stopword()}{stopword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily stopword\+::stopword (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+Constructs a stopword object using the name of a file \mbox{\Hypertarget{classstopword_aee102291edf88348aad736a35c961fdf}\label{classstopword_aee102291edf88348aad736a35c961fdf}} 
+\index{stopword@{stopword}!````~stopword@{$\sim$stopword}}
+\index{````~stopword@{$\sim$stopword}!stopword@{stopword}}
+\subsubsection{\texorpdfstring{$\sim$stopword()}{~stopword()}}
+{\footnotesize\ttfamily stopword\+::$\sim$stopword (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classstopword_a11210085752c2b3d63055490c13b6666}\label{classstopword_a11210085752c2b3d63055490c13b6666}} 
+\index{stopword@{stopword}!exists@{exists}}
+\index{exists@{exists}!stopword@{stopword}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool stopword\+::exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{word }\end{DoxyParamCaption}) const}
+
+Returns true if the given word is a stopword, else false \mbox{\Hypertarget{classstopword_a0bee2c17bb62af157dae20b9242805aa}\label{classstopword_a0bee2c17bb62af157dae20b9242805aa}} 
+\index{stopword@{stopword}!operator()@{operator()}}
+\index{operator()@{operator()}!stopword@{stopword}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool stopword\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{word }\end{DoxyParamCaption}) const}
+
+allows \hyperlink{classstopword_a11210085752c2b3d63055490c13b6666}{exists()} method to be called like the following\+: stopwords(word) 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classstopword_a80e1d6c776f6a931100b5ea063e3a6ea}\label{classstopword_a80e1d6c776f6a931100b5ea063e3a6ea}} 
+\index{stopword@{stopword}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!stopword@{stopword}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classstopword}{stopword} \&}]{sw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints the number of stop words 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

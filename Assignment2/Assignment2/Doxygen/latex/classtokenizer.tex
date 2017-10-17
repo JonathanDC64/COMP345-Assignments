@@ -1,24 +1,72 @@
 \hypertarget{classtokenizer}{}\section{tokenizer Class Reference}
 \label{classtokenizer}\index{tokenizer@{tokenizer}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtokenizer_a17c0f75fb81172c979148ae72765c715}{tokenizer} ()
+\item 
+\hyperlink{classtokenizer_a458162a13637fc34d706f8743ffa8909}{$\sim$tokenizer} ()
+\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtokenizer_aa1a768f007e710ff25d63a2cb1de83c3}\label{classtokenizer_aa1a768f007e710ff25d63a2cb1de83c3}} 
-static std\+::vector$<$ std\+::string $>$ {\bfseries tokenize} (const std\+::string \&filename)
+static std\+::vector$<$ std\+::string $>$ \hyperlink{classtokenizer_aa1a768f007e710ff25d63a2cb1de83c3}{tokenize} (const std\+::string \&filename)
 \item 
-\mbox{\Hypertarget{classtokenizer_a5d553b843e67154be958b849fbf20b62}\label{classtokenizer_a5d553b843e67154be958b849fbf20b62}} 
-static std\+::string {\bfseries sanitize} (std\+::string \&)
+static std\+::string \hyperlink{classtokenizer_a5d553b843e67154be958b849fbf20b62}{sanitize} (std\+::string \&)
 \item 
-\mbox{\Hypertarget{classtokenizer_a9fbc8f511d0eeb0ca2f0333612c99a2a}\label{classtokenizer_a9fbc8f511d0eeb0ca2f0333612c99a2a}} 
-static std\+::vector$<$ std\+::string $>$ {\bfseries tokenize\+\_\+string} (std\+::string \&text)
+static std\+::vector$<$ std\+::string $>$ \hyperlink{classtokenizer_a9fbc8f511d0eeb0ca2f0333612c99a2a}{tokenize\+\_\+string} (std\+::string \&text)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtokenizer_af8ab6eab63d97d86eb0e8a22eb94aafc}\label{classtokenizer_af8ab6eab63d97d86eb0e8a22eb94aafc}} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classtokenizer}{tokenizer} \&tk)
+std\+::ostream \& \hyperlink{classtokenizer_af8ab6eab63d97d86eb0e8a22eb94aafc}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classtokenizer}{tokenizer} \&tk)
 \end{DoxyCompactItemize}
 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtokenizer_a17c0f75fb81172c979148ae72765c715}\label{classtokenizer_a17c0f75fb81172c979148ae72765c715}} 
+\index{tokenizer@{tokenizer}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!tokenizer@{tokenizer}}
+\subsubsection{\texorpdfstring{tokenizer()}{tokenizer()}}
+{\footnotesize\ttfamily tokenizer\+::tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classtokenizer_a458162a13637fc34d706f8743ffa8909}\label{classtokenizer_a458162a13637fc34d706f8743ffa8909}} 
+\index{tokenizer@{tokenizer}!````~tokenizer@{$\sim$tokenizer}}
+\index{````~tokenizer@{$\sim$tokenizer}!tokenizer@{tokenizer}}
+\subsubsection{\texorpdfstring{$\sim$tokenizer()}{~tokenizer()}}
+{\footnotesize\ttfamily tokenizer\+::$\sim$tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtokenizer_a5d553b843e67154be958b849fbf20b62}\label{classtokenizer_a5d553b843e67154be958b849fbf20b62}} 
+\index{tokenizer@{tokenizer}!sanitize@{sanitize}}
+\index{sanitize@{sanitize}!tokenizer@{tokenizer}}
+\subsubsection{\texorpdfstring{sanitize()}{sanitize()}}
+{\footnotesize\ttfamily std\+::string tokenizer\+::sanitize (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+removes punctuation and makes all the characters lower case \mbox{\Hypertarget{classtokenizer_aa1a768f007e710ff25d63a2cb1de83c3}\label{classtokenizer_aa1a768f007e710ff25d63a2cb1de83c3}} 
+\index{tokenizer@{tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!tokenizer@{tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tokenizer\+::tokenize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns a vector containing all the words (sanitized) from a given file \mbox{\Hypertarget{classtokenizer_a9fbc8f511d0eeb0ca2f0333612c99a2a}\label{classtokenizer_a9fbc8f511d0eeb0ca2f0333612c99a2a}} 
+\index{tokenizer@{tokenizer}!tokenize\+\_\+string@{tokenize\+\_\+string}}
+\index{tokenize\+\_\+string@{tokenize\+\_\+string}!tokenizer@{tokenizer}}
+\subsubsection{\texorpdfstring{tokenize\+\_\+string()}{tokenize\_string()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tokenizer\+::tokenize\+\_\+string (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns a vector containing all the words (sanitized) from a given string 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtokenizer_af8ab6eab63d97d86eb0e8a22eb94aafc}\label{classtokenizer_af8ab6eab63d97d86eb0e8a22eb94aafc}} 
+\index{tokenizer@{tokenizer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tokenizer@{tokenizer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classtokenizer}{tokenizer} \&}]{tk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints the the use of the tokenizer class 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

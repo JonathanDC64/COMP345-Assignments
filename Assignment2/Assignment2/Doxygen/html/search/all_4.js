@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove_5fstop_5fwords',['remove_stop_words',['../classindexer.html#afdaec83c53cbc4df71436a4c936a2e89',1,'indexer']]]
+  ['name',['name',['../classdocument.html#adb574ffbe92dcb3b2ba2eb134257a091',1,'document']]]
 ];

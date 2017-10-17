@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size',['size',['../classindexer.html#a227b90870b8807668485754e402b8a60',1,'indexer']]]
+  ['name',['name',['../classdocument.html#adb574ffbe92dcb3b2ba2eb134257a091',1,'document']]]
 ];

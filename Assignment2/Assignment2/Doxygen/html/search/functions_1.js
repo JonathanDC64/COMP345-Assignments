@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['operator_5b_5d',['operator[]',['../classindexer.html#a1ef6a5497d341fdbbae13bb26a66c37a',1,'indexer']]],
-  ['output',['output',['../classindexer.html#af84f1ddc60859b7d007699ee011abf36',1,'indexer']]]
+  ['document',['document',['../classdocument.html#af1a85718219b8da6f1befaac0bf87989',1,'document::document()'],['../classdocument.html#a750ac91b3537c59d0fff8e4a01085c98',1,'document::document(const std::string &amp;file_name)']]]
 ];
