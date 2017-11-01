@@ -18,24 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Assignment2\Assignment2\document.cpp" />
-    <ClCompile Include="..\..\Assignment2\Assignment2\googler.cpp" />
-    <ClCompile Include="..\..\Assignment2\Assignment2\indexer.cpp" />
-    <ClCompile Include="..\..\Assignment2\Assignment2\query_result.cpp" />
-    <ClCompile Include="..\..\Assignment2\Assignment2\stopword.cpp" />
-    <ClCompile Include="..\..\Assignment2\Assignment2\tokenizer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Assignment2\Assignment2\document.h" />
-    <ClInclude Include="..\..\Assignment2\Assignment2\indexer.h" />
-    <ClInclude Include="..\..\Assignment2\Assignment2\query_result.h" />
-    <ClInclude Include="..\..\Assignment2\Assignment2\stopword.h" />
-    <ClInclude Include="..\..\Assignment2\Assignment2\tokenizer.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{FB16D1AB-3AE3-417A-9E22-7ADB7BCAA0C7}</ProjectGuid>
+    <ProjectGuid>{8E88EDCE-D6CB-490E-90BD-B3E557291546}</ProjectGuid>
     <RootNamespace>Assignment3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -125,6 +110,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
