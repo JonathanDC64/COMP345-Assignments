@@ -11,7 +11,7 @@ public:
 	/*! returns the the number of character in the document */
 	virtual long size() const override;
 
-	long get_pos() const
+	long get_pos() const;
 private:
 	long pos;
 	long num_words;

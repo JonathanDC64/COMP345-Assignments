@@ -1,4 +1,5 @@
 #include "indexer.h"
+#include "word_tokenizer.h"
 #include <fstream>
 #include <sstream>
 #include <iomanip>
@@ -98,9 +99,9 @@ void indexer::output() const
 
 void indexer::generateDictionary()
 {
-	tokenizer t;
+	word_tokenizer t;
 	for (document doc : this->documents) {
-		vector<string> tokens = t.tokenize(doc.name());
+		vector<string> tokens = t.tokenize(doc);
 		for (string token : tokens) {
 			this->dictionary.insert(pair<string, string>(token, token));
 		}
@@ -171,7 +172,7 @@ void indexer::compute()
 		istringstream iss(doc.content());
 
 		while (iss >> word) {
-			word = tokenizer::sanitize(word);
+			word = word_tokenizer::sanitize(word);
 			map<string, string>::iterator it = dictionary.find(word);
 			//only add occurence if word is in the dictionary
 			if (it != dictionary.end()) {
@@ -206,7 +207,7 @@ double indexer::normalize(int term_frequency, int document_frequency)
 
 double indexer::score(string & query, int document_index)
 {
-	vector<string> query_tokens = tokenizer::tokenize_string(query);
+	vector<string> query_tokens = word_tokenizer::tokenize_string(query);
 	vector<double> q(this->dictionary.size(), 0.0);
 	vector<double> d = this->weights[document_index];
 

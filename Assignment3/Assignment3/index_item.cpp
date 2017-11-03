@@ -26,10 +26,6 @@ std::string index_item::name() const
 }
 
 
-index_item::~index_item()
-{
-}
-
 std::string index_item::content() const
 {
 	return this->document_content;

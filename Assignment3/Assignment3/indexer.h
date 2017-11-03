@@ -1,5 +1,4 @@
 #pragma once
-#include "tokenizer.h"
 #include "stopword.h"
 #include "document.h"
 #include "query_result.h"

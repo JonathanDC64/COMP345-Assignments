@@ -23,6 +23,11 @@ sentence::sentence(const document & doc, long pos, long endPos)
 	}
 }
 
+long sentence::get_pos() const
+{
+	return this->pos;
+}
+
 long sentence::size() const
 {
 	return this->num_words;
