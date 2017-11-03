@@ -8,6 +8,6 @@ public:
 	virtual std::vector<sentence> tokenize(const document & doc) override;
 
 private:
-	std::string::size_type find_punct(const std::string & text);
+	std::string::size_type find_punct(const std::string & text, int start);
 };
 

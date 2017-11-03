@@ -2,22 +2,25 @@
 
 using namespace std;
 
+
+
+
+
 document_indexer::document_indexer()
-: indexer::indexer()
+	: indexer<document,word_tokenizer>()
 {
-    
+	ifstream fin(this->INDEX_FILENAME.c_str());
+	string filename;
+
+	while (fin >> filename) {
+		document d(filename);
+		d >> *this;
+	}
+	this->N = documents.size();
+	this->generateDictionary();
+	this->compute();
 }
 
-void document_indexer::initialize()
-{
-    ifstream fin(this->INDEX_FILENAME.c_str());
-    string filename;
-    
-    while (fin >> filename) {
-        document d(filename);
-        d >> *this;
-    }
-}
 
 /*
 int main() {
@@ -28,3 +31,8 @@ int main() {
 	system("pause");
 	return 0;
 }*/
+
+void operator>>(document & d, document_indexer &idx)
+{
+	idx.documents.push_back(d);
+}

@@ -16,7 +16,8 @@ std::vector<sentence> sentence_tokenizer::tokenize(const document & doc)
 	std::string::size_type size = doc.content().size();
 
 	while (pos <= size) {
-		endPos = find_punct(doc.content().substr(pos)) + 1;
+		//need to pass full string and index
+		endPos = find_punct(doc.content(), pos) + 1;
 		tokens.push_back(sentence(doc, pos, endPos));
 		pos = endPos;
 	}
@@ -24,11 +25,11 @@ std::vector<sentence> sentence_tokenizer::tokenize(const document & doc)
 	return tokens;
 }
 
-std::string::size_type sentence_tokenizer::find_punct(const std::string & text)
+std::string::size_type sentence_tokenizer::find_punct(const std::string & text, int start)
 {
-	for (std::string::size_type i = 0; i < text.size(); i++) {
+	for (std::string::size_type i = start; i < text.size(); i++) {
 		if (text[i] == '.' || text[i] == '!' || text[i] == '?')
 			return i;
 	}
-	return std::string::npos;
+	return text.size();//std::string::npos;
 }

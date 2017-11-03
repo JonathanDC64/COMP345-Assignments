@@ -1,5 +1,6 @@
 #pragma once
 #include "abstract_tokenizer.h"
+#include "index_item.h"
 #include <vector>
 #include <string>
 

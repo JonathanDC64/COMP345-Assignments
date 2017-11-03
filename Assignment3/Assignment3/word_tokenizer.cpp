@@ -21,7 +21,7 @@ std::vector<std::string> word_tokenizer::tokenize(const document & doc) {
     std::istringstream iss(doc.content());
     
     while (iss >> word) {
-        word = abstract_tokenizer<std::string>::sanitize(word);
+        word = tokenizer_tools::sanitize(word);
         tokens.push_back(word);
     }
     

@@ -1,5 +1,6 @@
 #pragma once
 #include "document.h"
+#include "index_item.h"
 
 class query_result
 {
@@ -8,12 +9,12 @@ class query_result
 public:
 
 	/*! constructs a query_result using a document and its score */
-	query_result(const document & found_document, const double score);
+	query_result(const index_item & found_document, const double score);
 
 	/*! Destructor */
 	~query_result();
 
-	document found_document; // document
+	const index_item *found_document; // document
 	double score; // score of the document
 	
 };

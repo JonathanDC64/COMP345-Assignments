@@ -1,11 +1,21 @@
 #include "document_indexer.h"
 #include "query_result.h"
+#include "sentence_indexer.h"
 #include <iostream>
 #include <iomanip>
 
 
 using namespace std;
-/*
+
+//int main() {
+	/*sentence_indexer idx;
+	idx.output();
+
+	system("pause");
+	return 0;*/
+//}
+
+
 int main() {
 	document_indexer idx;
 	bool again = false;
@@ -51,4 +61,4 @@ int main() {
 	system("pause");
 	return 0;
 }
- */
+ 

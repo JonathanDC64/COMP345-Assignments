@@ -1,10 +1,10 @@
 #include "abstract_tokenizer.h"
 #include <sstream>
+#include <algorithm>
 
 
 //Makes a word lower case and removes punctuation
-template<typename T>
-std::string abstract_tokenizer<T>::sanitize(std::string & text) {
+std::string tokenizer_tools::sanitize(std::string & text) {
     const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
     for (char &c : text) {
         //make lowercase
@@ -18,8 +18,7 @@ std::string abstract_tokenizer<T>::sanitize(std::string & text) {
     return text;
 }
 
-template<typename T>
-std::vector<std::string> abstract_tokenizer<T>::tokenize_string(std::string & text)
+std::vector<std::string> tokenizer_tools::tokenize_string(std::string & text)
 {
     std::vector<std::string> tokens;
     std::string word;
