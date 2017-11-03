@@ -1,13 +1,13 @@
-#include "indexer.h"
+#include "document_indexer.h"
 #include "query_result.h"
 #include <iostream>
 #include <iomanip>
 
 
 using namespace std;
-
+/*
 int main() {
-	indexer idx;
+	document_indexer idx;
 	bool again = false;
 	cout << showpoint;
 	do {
@@ -51,3 +51,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+ */

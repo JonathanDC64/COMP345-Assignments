@@ -19,10 +19,5 @@ public:
 	/*! returns a vector containing all the words (sanitized) from a given file */
 	virtual std::vector<std::string> tokenize(const document & filename) override;
 
-	/*! removes punctuation and makes all the characters lower case */
-	static std::string sanitize(std::string &);
-
-	/*! returns a vector containing all the words (sanitized) from a given string */
-	static std::vector<std::string> tokenize_string(std::string & text);
 };
 
