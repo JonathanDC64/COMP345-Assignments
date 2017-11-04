@@ -19,6 +19,7 @@ class sentence_indexer : public indexer<sentence, sentence_tokenizer>
 public:
 	sentence_indexer();
 	virtual vector<query_result> query(string search, int n = 500) override;
+	static const std::string INDEX_DOCS;
 };
 
 

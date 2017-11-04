@@ -4,10 +4,12 @@
 
 using namespace std;
 
+const string sentence_indexer::INDEX_DOCS = "index_docs.txt";
+
 sentence_indexer::sentence_indexer()
 	: indexer()
 {
-	ifstream fin(this->INDEX_FILENAME.c_str());
+	ifstream fin(sentence_indexer::INDEX_DOCS.c_str());
 	string filename;
 	vector<sentence> sentences;
 	sentence_tokenizer st;
