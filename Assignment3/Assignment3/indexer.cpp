@@ -133,25 +133,6 @@ bool gtScore(const query_result & left, const query_result & right)
 }
 
 template <typename T, typename E>
-vector<query_result> indexer<T,E>::query(string search, int n)
-{
-    vector<query_result> results;
-    
-    for (int i = 0; i < documents.size(); i++) {
-        double score = this->score(search, i);
-        results.push_back(query_result(documents[i], score));
-    }
-    sort(results.begin(), results.end(), gtScore);
-    
-    if (results.size() < n) {
-        n = results.size();
-    }
-    
-    vector<query_result> top_results(results.begin(), results.begin() + n);
-    return top_results;
-}
-
-template <typename T, typename E>
 void indexer<T,E>::compute()
 {
     this->occurences.clear();

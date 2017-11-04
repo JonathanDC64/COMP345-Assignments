@@ -1,23 +1,15 @@
 #include "document_indexer.h"
 #include "query_result.h"
-#include "sentence_indexer.h"
 #include <iostream>
 #include <iomanip>
 
 
 using namespace std;
 
-//int main() {
-	/*sentence_indexer idx;
-	idx.output();
-
-	system("pause");
-	return 0;*/
-//}
 
 
-int main() {
-	sentence_indexer idx;
+/*int main() {
+	document_indexer idx;
 	bool again = false;
 	cout << showpoint;
 	do {
@@ -45,6 +37,12 @@ int main() {
 			pos++;
 		}
 
+		//cout << "Essay:" << endl;
+		//for (query_result result : results) {
+		//	if(result.score != 0)
+		//		cout << result.found_document->content() << endl;;
+		//}
+
 		cout << endl;
 		cout << "Perform another search?: (y/n) : ";
 
@@ -62,3 +60,4 @@ int main() {
 	return 0;
 }
  
+ */

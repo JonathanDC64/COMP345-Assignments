@@ -13,6 +13,7 @@ sentence::sentence(const document & doc, long pos, long endPos)
 {
 	this->set_name(doc.name());
 	this->pos = pos;
+	this->num_words = 0;
 
 	this->set_content(doc.content().substr(this->pos, endPos - this->pos));
 

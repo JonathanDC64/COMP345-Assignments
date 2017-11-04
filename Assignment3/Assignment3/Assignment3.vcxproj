@@ -122,6 +122,7 @@
     <ClCompile Include="sentence_indexer.cpp" />
     <ClCompile Include="sentence_tokenizer.cpp" />
     <ClCompile Include="stopword.cpp" />
+    <ClCompile Include="summarizer.cpp" />
     <ClCompile Include="word_tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>

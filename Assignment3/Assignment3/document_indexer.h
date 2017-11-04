@@ -21,5 +21,7 @@ public:
 
 	/*! Default construct creates an indexer with static index file */
 	document_indexer();
+
+	virtual vector<query_result> query(string search, int n = 10) override;
 };
 

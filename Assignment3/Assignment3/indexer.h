@@ -49,7 +49,7 @@ public:
     void remove_stop_words();
     
     /*! searches the dictionary and documents for certain keywords*/
-    vector<query_result> query(string search, int n = 10);
+    virtual vector<query_result> query(string search, int n = 10) = 0;
     
     /*! Retrieves an indexed document at the specified index*/
     T & operator[](int index);
@@ -70,6 +70,8 @@ protected:
 
 	void compute(); // used to be called num occurences
 
+	double score(string & query, int document_index);
+
 private:
 
     
@@ -77,13 +79,10 @@ private:
 
     std::string::size_type biggest_word_length = 0;
 
-    
-
     void print_legend() const;
     void print_full_line() const;
 
     double normalize(int term_fequency, int document_frequency);
-    double score(string & query, int document_index);
 
     double cosine_similarity(const vector<double> & q, const vector<double> & d);
 };

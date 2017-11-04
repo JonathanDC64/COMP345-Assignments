@@ -8,7 +8,7 @@ public:
 
 	sentence(const document & doc, long pos, long endPos);
 
-	/*! returns the the number of character in the document */
+	/*! returns the the number of words in the document */
 	virtual long size() const override;
 
 	long get_pos() const;
