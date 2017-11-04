@@ -17,7 +17,7 @@ using namespace std;
 
 
 int main() {
-	document_indexer idx;
+	sentence_indexer idx;
 	bool again = false;
 	cout << showpoint;
 	do {

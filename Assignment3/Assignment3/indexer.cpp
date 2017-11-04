@@ -1,13 +1,4 @@
 #include "indexer.h"
-//
-//  indexer.cpp
-//  assignment3
-//
-//  Created by justin baron on 2017-11-03.
-//  Copyright © 2017 justin baron. All rights reserved.
-//
-
-#include "indexer.h"
 #include "abstract_tokenizer.h"
 #include <sstream>
 #include <cmath>
@@ -148,9 +139,7 @@ vector<query_result> indexer<T,E>::query(string search, int n)
     
     for (int i = 0; i < documents.size(); i++) {
         double score = this->score(search, i);
-        T doc = documents[i];
-        query_result result(doc, score);
-        results.push_back(result);
+        results.push_back(query_result(documents[i], score));
     }
     sort(results.begin(), results.end(), gtScore);
     
