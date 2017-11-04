@@ -5,13 +5,7 @@
 
 //Makes a word lower case and removes punctuation
 std::string tokenizer_tools::sanitize(std::string & text) {
-    const unsigned char LOWERCASE_OFFSET = 'a' - 'A';
-    for (char &c : text) {
-        //make lowercase
-        if (c >= 'A' && c <= 'Z') {
-            c += LOWERCASE_OFFSET;
-        }
-    }
+	std::transform(text.begin(), text.end(), text.begin(), ::tolower);
     
     //remove punctuation
     text.erase(std::remove_if(text.begin(), text.end(), ::ispunct), text.end());

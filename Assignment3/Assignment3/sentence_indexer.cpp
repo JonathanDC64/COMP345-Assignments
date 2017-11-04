@@ -36,9 +36,14 @@ vector<query_result> sentence_indexer::query(string search, int n)
 			results.push_back(query_result(documents[i], score));
 		}
 	}
-	sort(results.begin(), results.end(), gtScoreGrouped);
+
+	// Sorts by top results
+	sort(results.begin(), results.end(), gtScore);
+
 	vector<query_result> top_results;
 	int totalWords = 0;
+
+	// Only get sentences up to (n) words
 	for (query_result qr : results) {
 		totalWords += qr.found_document->size();
 		if (totalWords > n) {
@@ -46,6 +51,10 @@ vector<query_result> sentence_indexer::query(string search, int n)
 		}
 		top_results.push_back(qr);
 	}
+
+	//Group sentences by their documents and sentence position
+	sort(top_results.begin(), top_results.end(), gtScoreGrouped);
+
 	return top_results;
 }
 

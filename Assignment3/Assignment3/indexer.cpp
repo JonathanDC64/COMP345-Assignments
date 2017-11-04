@@ -13,6 +13,15 @@ indexer<T, E>::indexer<T, E>()
 {
 }
 
+//template<typename T, typename E>
+//indexer<T, E>::~indexer()
+//{
+//	for (vector<int> * oc : occurences) {
+//		delete oc;
+//	}
+//	this->occurences.clear();
+//}
+
 template<typename T, typename E>
 unsigned int indexer<T, E>::size() const
 {
@@ -99,12 +108,16 @@ void indexer<T,E>::generateDictionary()
             this->dictionary.insert(pair<string, string>(token, token));
         }
     }
-    
+
+
+	int i = 0;
     for (pair<string, string> d : this->dictionary) {
-        string token = d.first;
-        if (token.length() > biggest_word_length) {
-            biggest_word_length = token.length();
-        }
+		string token = d.first;
+		if (token.length() > biggest_word_length) {
+			biggest_word_length = token.length();
+		}
+		occurence_map.insert(pair<string, int>(token, i));
+		++i;
     }
 }
 
@@ -135,12 +148,15 @@ bool gtScore(const query_result & left, const query_result & right)
 template <typename T, typename E>
 void indexer<T,E>::compute()
 {
+	/*for (vector<int> * oc : occurences) {
+		delete oc;
+	}*/
     this->occurences.clear();
     this->document_frequency = vector<int>(this->dictionary.size(), 0);
     this->weights.clear();
     
     for (T doc : documents) {
-        vector<int> occurence(this->dictionary.size(), 0);
+        vector<int>  occurence(this->dictionary.size(), 0);
         vector<bool> frequents(this->dictionary.size(), false);
         
         string word;
@@ -150,10 +166,9 @@ void indexer<T,E>::compute()
             word = tokenizer_tools::sanitize(word);
             map<string, string>::iterator it = dictionary.find(word);
             //only add occurence if word is in the dictionary
-            if (it != dictionary.end()) {
-                //find the index of the word in the map
-                int index = distance(this->dictionary.begin(), it);
-                occurence[index]++;
+			if (it != dictionary.end()) {
+				int index = this->occurence_map[word];
+				occurence[index]++;
                 if (!frequents[index]) {
                     frequents[index] = true;
                     this->document_frequency[index]++;
@@ -167,18 +182,18 @@ void indexer<T,E>::compute()
         vector<double> weight(this->dictionary.size(), 0.0);
         //calculate weight
         for (int j = 0; j < this->dictionary.size(); j++) {
-            weight[j] = indexer::normalize(this->occurences[i][j], this->document_frequency[j]);
+			weight[j] = normalize(this->occurences[i][j], this->document_frequency[j]);
         }
         
         this->weights.push_back(weight);
     }
-    
+	int i = 8;
 }
 
 template <typename T, typename E>
 double indexer<T,E>::normalize(int term_frequency, int document_frequency)
 {
-    return (term_frequency > 0) ? ( 1 + log10((double)term_frequency)) * log10((double)this->N / (double)document_frequency) : 0;
+	return (term_frequency > 0) ? (1 + log10((double)term_frequency)) * log10((double)this->N / (double)document_frequency) : 0;
 }
 
 template <typename T, typename E>

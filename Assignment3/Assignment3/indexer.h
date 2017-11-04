@@ -38,6 +38,8 @@ class indexer
 public:
     
     indexer<T,E>();
+
+	//virtual ~indexer<T, E>();
     
     /*! Gives the number of documents processed by the index */
     unsigned int size() const;
@@ -74,6 +76,7 @@ protected:
 
 private:
 
+	std::map<string, int> occurence_map;
     
     const stopword stopwords;
 
