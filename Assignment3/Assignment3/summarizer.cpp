@@ -12,6 +12,7 @@ const string QUERY_FILE = "index_queries.txt";
 int main() {
 	cout << "Loading Documents..." << endl;
 	sentence_indexer idx;
+	idx.remove_stop_words();
 	bool again = false;
 	cout << showpoint;
 

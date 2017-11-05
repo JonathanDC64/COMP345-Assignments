@@ -136,6 +136,17 @@ void indexer<T,E>::remove_stop_words()
     for (string word : removal_list) {
         this->dictionary.erase(word);
     }
+
+	occurence_map.clear();
+	int i = 0;
+	for (pair<string, string> d : this->dictionary) {
+		string token = d.first;
+		if (token.length() > biggest_word_length) {
+			biggest_word_length = token.length();
+		}
+		occurence_map.insert(pair<string, int>(token, i));
+		++i;
+	}
     
     this->compute();
 }
@@ -199,16 +210,16 @@ double indexer<T,E>::normalize(int term_frequency, int document_frequency)
 template <typename T, typename E>
 double indexer<T,E>::score(string & query, int document_index)
 {
-    vector<string> query_tokens = tokenizer_tools::tokenize_string(query);
+	vector<string> query_tokens = tokenizer_tools::tokenize_string(query);
     vector<double> q(this->dictionary.size(), 0.0);
-    vector<double> d = this->weights[document_index];
+    vector<double> * d = &(this->weights[document_index]);
     
-    for (string token : query_tokens) {
+	for (string & token : query_tokens) {
         map<string, string>::iterator it = this->dictionary.find(token);
         //only add occurence if word is in the dictionary
         if (it != dictionary.end()) {
             //find the index of the word in the map
-            int index = distance(this->dictionary.begin(), it);
+            int index = occurence_map[token];
             q[index] = this->weights[document_index][index];
         }
     }
@@ -216,9 +227,9 @@ double indexer<T,E>::score(string & query, int document_index)
     //double numerator = inner_product(q.begin(), q.end(), d.begin(), 0.0);
     //double denominator = sqrt(for_each(q.begin(), q.end(), 0.0, std::square_acc ));
     
-    double cos_sim = this->cosine_similarity(q, d);
+    double cos_sim = this->cosine_similarity(q, *d);
     
-    return cos_sim >= 0 ? cos_sim = this->cosine_similarity(q, d) : 0;
+    return cos_sim >= 0 ? cos_sim : 0;
 }
 
 template <typename T, typename E>

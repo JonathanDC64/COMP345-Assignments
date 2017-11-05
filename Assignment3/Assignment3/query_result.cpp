@@ -1,7 +1,7 @@
 #include "query_result.h"
 #include <iomanip>
 
-query_result::query_result(const index_item & found_document, const double score)
+query_result::query_result(const index_item & found_document, const double & score)
 {
 	this->found_document = &found_document;
 	this->score = score;

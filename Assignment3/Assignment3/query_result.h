@@ -9,7 +9,7 @@ class query_result
 public:
 
 	/*! constructs a query_result using a document and its score */
-	query_result(const index_item & found_document, const double score);
+	query_result(const index_item & found_document, const double & score);
 
 	/*! Destructor */
 	~query_result();
