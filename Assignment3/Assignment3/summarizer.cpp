@@ -31,6 +31,8 @@ int main() {
 			query += line + " ";
 		}
 
+		dfs.close();
+
 		cout << endl;
 		cout << "Processing Query... :" << endl;
 		cout << query << endl;
@@ -61,24 +63,13 @@ int main() {
 
 		cout << "Essay:" << endl;
 		for (query_result result : results) {
-			if (result.score != 0)
-				cout << result.found_document->content() << endl;;
+			cout << result.found_document->content() << endl << endl;
 		}
-
-		/*cout << endl;
-		cout << "Perform another search?: (y/n) : ";
-
-		string answer;
-		cin >> answer;
-		again = answer == "y" ? true : false;*/
-
-		//removes any '\n' left in the cin buffer
-		cin.ignore();
 
 		cout << endl;
 	}
 	//} while (again);
-
+	qfs.close();
 	system("pause");
 	return 0;
 }
