@@ -63,3 +63,9 @@ bool sentence_tokenizer::isAbbreviation(std::string ab)
 {
 	return abbreviations.find(ab) != abbreviations.end();
 }
+
+std::ostream & operator<<(std::ostream & os, const sentence_tokenizer & right)
+{
+	os << "The sentence tokenizer splits multiple documents into sentences.";
+	return os;
+}

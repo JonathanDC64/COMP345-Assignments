@@ -12,7 +12,6 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
-#include "indexer.h"
 #include "stopword.h"
 #include "document.h"
 #include "query_result.h"
@@ -30,6 +29,7 @@ template <typename T, typename E>
 class indexer
 {
     
+	/*! Returns true if the left query_result has a bigger score than the right */
     friend bool gtScore(const query_result & left, const query_result & right);
     
     /*! Sends the number of terms in the dictionary and the number of documents to an output stream*/
@@ -37,9 +37,8 @@ class indexer
     
 public:
     
+	/*! Default constructor */
     indexer<T,E>();
-
-	//virtual ~indexer<T, E>();
     
     /*! Gives the number of documents processed by the index */
     unsigned int size() const;
@@ -54,7 +53,7 @@ public:
     virtual vector<query_result> query(string search, int n = 10) = 0;
     
     /*! Retrieves an indexed document at the specified index*/
-    T & operator[](int index);
+    index_item * operator[](int index);
     
 protected:
     
@@ -84,7 +83,6 @@ private:
 
     void print_legend() const;
     void print_full_line() const;
-
     double normalize(int term_fequency, int document_frequency);
 
     double cosine_similarity(const vector<double> & q, const vector<double> & d);

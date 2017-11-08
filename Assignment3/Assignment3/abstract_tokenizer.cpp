@@ -25,3 +25,9 @@ std::vector<std::string> tokenizer_tools::tokenize_string(std::string & text)
     
     return tokens;
 }
+template<typename T>
+std::ostream & operator<<(std::ostream & os, const abstract_tokenizer<T> & right)
+{
+	os << "The abstract tokenizer splits documents into index_items";
+	return os;
+}

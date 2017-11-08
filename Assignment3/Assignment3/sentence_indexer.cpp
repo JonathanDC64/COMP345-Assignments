@@ -14,6 +14,7 @@ sentence_indexer::sentence_indexer()
 	vector<sentence> sentences;
 	sentence_tokenizer st;
 
+
 	while (fin >> filename) {
 		document d(filename);
 		sentences = st.tokenize(d);
@@ -25,6 +26,7 @@ sentence_indexer::sentence_indexer()
 	this->generateDictionary();
 	this->compute();
 }
+
 
 vector<query_result> sentence_indexer::query(string search, int n)
 {
@@ -46,6 +48,7 @@ vector<query_result> sentence_indexer::query(string search, int n)
 	// Only get sentences up to (n) words
 	for (query_result qr : results) {
 		totalWords += qr.found_document->size();
+
 		if (totalWords > n) {
 			break;
 		}
@@ -58,10 +61,17 @@ vector<query_result> sentence_indexer::query(string search, int n)
 	return top_results;
 }
 
+std::ostream & operator<<(std::ostream & os, const sentence_indexer & right)
+{
+	os << "The document_indexer indexes multiple sentences ";
+	return os;
+}
+
 bool gtScoreGrouped(const query_result & left, const query_result & right)
 {
 	const sentence * ls = dynamic_cast<const sentence*>(left.found_document);
 	const sentence * rs = dynamic_cast<const sentence*>(right.found_document);
+
 	if (ls->name() != rs->name()) {
 		return ls->name() < rs->name();
 	}

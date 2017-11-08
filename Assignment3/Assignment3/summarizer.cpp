@@ -8,7 +8,6 @@ using namespace std;
 
 const string QUERY_FILE = "index_queries.txt";
 
-
 int main() {
 	cout << "Loading Documents..." << endl;
 	sentence_indexer idx;
@@ -30,7 +29,7 @@ int main() {
 		while (getline(dfs, line)) {
 			query += line + " ";
 		}
-
+		
 		dfs.close();
 
 		cout << endl;
@@ -40,9 +39,6 @@ int main() {
 
 		const int n = 500;
 		vector<query_result> results = idx.query(query, n);
-
-		
-
 
 		cout << endl;
 		cout << "Ranked search Results: " << endl;

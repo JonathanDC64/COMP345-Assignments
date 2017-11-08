@@ -46,6 +46,12 @@ int main() {
 	return 0;
 }*/
 
+std::ostream & operator<<(std::ostream & os, const document_indexer & right)
+{
+	os << "The document_indexer indexes multiple documents";
+	return os;
+}
+
 void operator>>(document & d, document_indexer &idx)
 {
 	idx.documents.push_back(d);

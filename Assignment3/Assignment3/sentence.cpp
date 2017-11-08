@@ -33,3 +33,9 @@ long sentence::size() const
 {
 	return this->num_words;
 }
+
+std::ostream & operator<<(std::ostream & os, const sentence & doc)
+{
+	os << "Name: " << doc.name() << " Size: " << doc.size();
+	return os;
+}

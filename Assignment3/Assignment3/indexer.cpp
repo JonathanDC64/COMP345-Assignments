@@ -258,6 +258,6 @@ std::ostream & operator<<(std::ostream & os, const indexer<T,E> & idx)
 }
 
 template <typename T, typename E>
-T & indexer<T,E>::operator[](int index) {
-    return this->documents[index];
+index_item * indexer<T,E>::operator[](int index) {
+    return static_cast<index_item*>(&(this->documents[index]));
 }

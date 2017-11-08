@@ -46,3 +46,9 @@ void index_item::set_name(const std::string & name)
 	this->document_name = name;
 }
 
+std::ostream & operator<<(std::ostream & os, const index_item & right)
+{
+	os << "Document name: " << right.document_name << std::endl;
+	os << "Document content: " << right.document_content << std::endl;
+	return os;
+}

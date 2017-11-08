@@ -3,8 +3,14 @@
 class index_item
 {
 public:
+
+	/*! prints the document name and its content */
+	friend std::ostream & operator<<(std::ostream & os, const index_item & right);
+
+	/*! Default constructor */
 	index_item();
 
+	/*! Constructs an index_item using a file name*/
 	index_item(const std::string & file_name);
 	
 	/*! returns the name of the document */
