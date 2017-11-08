@@ -1,0 +1,74 @@
+\hypertarget{classsentence__indexer}{}\section{sentence\+\_\+indexer Class Reference}
+\label{classsentence__indexer}\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+Inheritance diagram for sentence\+\_\+indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsentence__indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsentence__indexer_a365d5a760a116eb4f48fe8fdbdeb0421}{sentence\+\_\+indexer} ()
+\item 
+virtual vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ \hyperlink{classsentence__indexer_a039940ff3461bb8fa95b66aa9b5f8496}{query} (string search, int n=500) override
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classsentence__indexer_ad09f6baaa740dac6056316377c95dfa7}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classsentence__indexer}{sentence\+\_\+indexer} \&right)
+\item 
+bool \hyperlink{classsentence__indexer_a105a138776c9677f92568db3f53d91f2}{gt\+Score\+Grouped} (const \hyperlink{classquery__result}{query\+\_\+result} \&left, const \hyperlink{classquery__result}{query\+\_\+result} \&right)
+\item 
+void \hyperlink{classsentence__indexer_aad9b25bf223fbb0d7eed5a168cb702ec}{operator$>$$>$} (\hyperlink{classsentence}{sentence} \&s, \hyperlink{classsentence__indexer}{sentence\+\_\+indexer} \&idx)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsentence__indexer_a365d5a760a116eb4f48fe8fdbdeb0421}\label{classsentence__indexer_a365d5a760a116eb4f48fe8fdbdeb0421}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{sentence\+\_\+indexer()}{sentence\_indexer()}}
+{\footnotesize\ttfamily sentence\+\_\+indexer\+::sentence\+\_\+indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsentence__indexer_a039940ff3461bb8fa95b66aa9b5f8496}\label{classsentence__indexer_a039940ff3461bb8fa95b66aa9b5f8496}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!query@{query}}
+\index{query@{query}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ sentence\+\_\+indexer\+::query (\begin{DoxyParamCaption}\item[{string}]{search,  }\item[{int}]{n = {\ttfamily 500} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the top \hyperlink{classquery__result}{query\+\_\+result} (score) until the sums of their words reached (N) and returns them as a vector 
+
+Implements \hyperlink{classindexer_a9a7679edcc3114613dac13b688c0e4b2}{indexer$<$ sentence, sentence\+\_\+tokenizer $>$}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsentence__indexer_a105a138776c9677f92568db3f53d91f2}\label{classsentence__indexer_a105a138776c9677f92568db3f53d91f2}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!gt\+Score\+Grouped@{gt\+Score\+Grouped}}
+\index{gt\+Score\+Grouped@{gt\+Score\+Grouped}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{gt\+Score\+Grouped}{gtScoreGrouped}}
+{\footnotesize\ttfamily bool gt\+Score\+Grouped (\begin{DoxyParamCaption}\item[{const \hyperlink{classquery__result}{query\+\_\+result} \&}]{left,  }\item[{const \hyperlink{classquery__result}{query\+\_\+result} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+sorts the query\+\_\+results by their name, and then by their position in the document \mbox{\Hypertarget{classsentence__indexer_ad09f6baaa740dac6056316377c95dfa7}\label{classsentence__indexer_ad09f6baaa740dac6056316377c95dfa7}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classsentence__indexer}{sentence\+\_\+indexer} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints information about the class \mbox{\Hypertarget{classsentence__indexer_aad9b25bf223fbb0d7eed5a168cb702ec}\label{classsentence__indexer_aad9b25bf223fbb0d7eed5a168cb702ec}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily void operator$>$$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{classsentence}{sentence} \&}]{s,  }\item[{\hyperlink{classsentence__indexer}{sentence\+\_\+indexer} \&}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Adds a document file to an indexer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sentence\+\_\+indexer.\+h\item 
+sentence\+\_\+indexer.\+cpp\end{DoxyCompactItemize}

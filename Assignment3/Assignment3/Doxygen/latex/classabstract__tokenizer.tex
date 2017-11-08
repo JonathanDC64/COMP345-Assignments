@@ -1,0 +1,41 @@
+\hypertarget{classabstract__tokenizer}{}\section{abstract\+\_\+tokenizer$<$ T $>$ Class Template Reference}
+\label{classabstract__tokenizer}\index{abstract\+\_\+tokenizer$<$ T $>$@{abstract\+\_\+tokenizer$<$ T $>$}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ T $>$ \hyperlink{classabstract__tokenizer_aeea4a861fdfa18351555b0d00a378165}{tokenize} (const \hyperlink{classdocument}{document} \&doc)=0
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classabstract__tokenizer_abca989b4c879ea066af32a6aa0c84376}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classabstract__tokenizer}{abstract\+\_\+tokenizer} \&right)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classabstract__tokenizer_aeea4a861fdfa18351555b0d00a378165}\label{classabstract__tokenizer_aeea4a861fdfa18351555b0d00a378165}} 
+\index{abstract\+\_\+tokenizer@{abstract\+\_\+tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!abstract\+\_\+tokenizer@{abstract\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual std\+::vector$<$T$>$ \hyperlink{classabstract__tokenizer}{abstract\+\_\+tokenizer}$<$ T $>$\+::tokenize (\begin{DoxyParamCaption}\item[{const \hyperlink{classdocument}{document} \&}]{doc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+splits a document into index\+\_\+items and returns them as a vector 
+
+Implemented in \hyperlink{classword__tokenizer_ac51f61652880447073e16fdb0f471fbe}{word\+\_\+tokenizer}, and \hyperlink{classsentence__tokenizer_abd8fdaae180f7c8c6dea91c68f7b8865}{sentence\+\_\+tokenizer}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classabstract__tokenizer_abca989b4c879ea066af32a6aa0c84376}\label{classabstract__tokenizer_abca989b4c879ea066af32a6aa0c84376}} 
+\index{abstract\+\_\+tokenizer@{abstract\+\_\+tokenizer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!abstract\+\_\+tokenizer@{abstract\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classabstract__tokenizer}{abstract\+\_\+tokenizer}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints information about how the class should be used 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+abstract\+\_\+tokenizer.\+h\end{DoxyCompactItemize}

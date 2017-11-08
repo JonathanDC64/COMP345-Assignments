@@ -1,0 +1,74 @@
+\hypertarget{classsentence}{}\section{sentence Class Reference}
+\label{classsentence}\index{sentence@{sentence}}
+Inheritance diagram for sentence\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsentence}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsentence_a458e5abe0d27f8972771153e72667673}{sentence} ()
+\item 
+\hyperlink{classsentence_ade30f24b62f56cf53fd38d0fb541082c}{sentence} (const \hyperlink{classdocument}{document} \&doc, long pos, long end\+Pos)
+\item 
+virtual long \hyperlink{classsentence_ad673d4210850083f621383e2629a7b0e}{size} () const override
+\item 
+long \hyperlink{classsentence_a033a9fd50b254e87d5303a23b2f02295}{get\+\_\+pos} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classsentence_a75f010f233216c95ebc86aa5e5675574}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classsentence}{sentence} \&doc)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsentence_a458e5abe0d27f8972771153e72667673}\label{classsentence_a458e5abe0d27f8972771153e72667673}} 
+\index{sentence@{sentence}!sentence@{sentence}}
+\index{sentence@{sentence}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{sentence()}{sentence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sentence\+::sentence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classsentence_ade30f24b62f56cf53fd38d0fb541082c}\label{classsentence_ade30f24b62f56cf53fd38d0fb541082c}} 
+\index{sentence@{sentence}!sentence@{sentence}}
+\index{sentence@{sentence}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{sentence()}{sentence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sentence\+::sentence (\begin{DoxyParamCaption}\item[{const \hyperlink{classdocument}{document} \&}]{doc,  }\item[{long}]{pos,  }\item[{long}]{end\+Pos }\end{DoxyParamCaption})}
+
+Constructs a sentence using a document, its starting position and its ending position 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsentence_a033a9fd50b254e87d5303a23b2f02295}\label{classsentence_a033a9fd50b254e87d5303a23b2f02295}} 
+\index{sentence@{sentence}!get\+\_\+pos@{get\+\_\+pos}}
+\index{get\+\_\+pos@{get\+\_\+pos}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{get\+\_\+pos()}{get\_pos()}}
+{\footnotesize\ttfamily long sentence\+::get\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+gets the starting position of the sentence \mbox{\Hypertarget{classsentence_ad673d4210850083f621383e2629a7b0e}\label{classsentence_ad673d4210850083f621383e2629a7b0e}} 
+\index{sentence@{sentence}!size@{size}}
+\index{size@{size}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily long sentence\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+returns the the number of words in the document 
+
+Implements \hyperlink{classindex__item_a7c16d6bca513663fab66d40a6c0289a9}{index\+\_\+item}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsentence_a75f010f233216c95ebc86aa5e5675574}\label{classsentence_a75f010f233216c95ebc86aa5e5675574}} 
+\index{sentence@{sentence}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classsentence}{sentence} \&}]{doc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints the name of the document it belongs to and the size of the sentence in words 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sentence.\+h\item 
+sentence.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,73 @@
+\hypertarget{classdocument__indexer}{}\section{document\+\_\+indexer Class Reference}
+\label{classdocument__indexer}\index{document\+\_\+indexer@{document\+\_\+indexer}}
+
+
+{\ttfamily \#include $<$document\+\_\+indexer.\+h$>$}
+
+Inheritance diagram for document\+\_\+indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdocument__indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdocument__indexer_a569b5a1dc381efce6ab2ab64644a7662}{document\+\_\+indexer} ()
+\item 
+virtual vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ \hyperlink{classdocument__indexer_acdb8dcbe7827e775ab8d64e79212ea36}{query} (string search, int n=10) override
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classdocument__indexer_aa6925b3d886b1c21f2138ded7b5b05dc}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classdocument__indexer}{document\+\_\+indexer} \&right)
+\item 
+void \hyperlink{classdocument__indexer_ad495ee25cb53dba20e9c8de1d0ce22e4}{operator$>$$>$} (\hyperlink{classdocument}{document} \&d, \hyperlink{classdocument__indexer}{document\+\_\+indexer} \&idx)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The indexer is responsible for storing and maintaining your document index 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdocument__indexer_a569b5a1dc381efce6ab2ab64644a7662}\label{classdocument__indexer_a569b5a1dc381efce6ab2ab64644a7662}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!document\+\_\+indexer@{document\+\_\+indexer}}
+\index{document\+\_\+indexer@{document\+\_\+indexer}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{document\+\_\+indexer()}{document\_indexer()}}
+{\footnotesize\ttfamily document\+\_\+indexer\+::document\+\_\+indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default construct creates an indexer with static index file 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdocument__indexer_acdb8dcbe7827e775ab8d64e79212ea36}\label{classdocument__indexer_acdb8dcbe7827e775ab8d64e79212ea36}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!query@{query}}
+\index{query@{query}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ document\+\_\+indexer\+::query (\begin{DoxyParamCaption}\item[{string}]{search,  }\item[{int}]{n = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+returns a vector of top (n) query\+\_\+results for the given query (search) 
+
+Implements \hyperlink{classindexer_a9a7679edcc3114613dac13b688c0e4b2}{indexer$<$ document, word\+\_\+tokenizer $>$}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classdocument__indexer_aa6925b3d886b1c21f2138ded7b5b05dc}\label{classdocument__indexer_aa6925b3d886b1c21f2138ded7b5b05dc}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classdocument__indexer}{document\+\_\+indexer} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints information about the class \mbox{\Hypertarget{classdocument__indexer_ad495ee25cb53dba20e9c8de1d0ce22e4}\label{classdocument__indexer_ad495ee25cb53dba20e9c8de1d0ce22e4}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily void operator$>$$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{classdocument}{document} \&}]{d,  }\item[{\hyperlink{classdocument__indexer}{document\+\_\+indexer} \&}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Adds a document file to an indexer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+document\+\_\+indexer.\+h\item 
+document\+\_\+indexer.\+cpp\end{DoxyCompactItemize}

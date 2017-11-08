@@ -1,0 +1,93 @@
+\hypertarget{classindex__item}{}\section{index\+\_\+item Class Reference}
+\label{classindex__item}\index{index\+\_\+item@{index\+\_\+item}}
+Inheritance diagram for index\+\_\+item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classindex__item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classindex__item_a26948d7ad5975fe8160fdedb58df9904}{index\+\_\+item} ()
+\item 
+\hyperlink{classindex__item_a1afb2c0d82acdec4707ffc1793fba0ff}{index\+\_\+item} (const std\+::string \&file\+\_\+name)
+\item 
+std\+::string \hyperlink{classindex__item_a1bcb5c577c3986549330c3aa283a6a5e}{name} () const
+\item 
+virtual long \hyperlink{classindex__item_a7c16d6bca513663fab66d40a6c0289a9}{size} () const =0
+\item 
+std\+::string \hyperlink{classindex__item_aafe86cc0ad7284d6db317588f63d1cb2}{content} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classindex__item_aa12a6575ea76795f5f00f2261375cb64}\label{classindex__item_aa12a6575ea76795f5f00f2261375cb64}} 
+void {\bfseries set\+\_\+content} (const std\+::string \&\hyperlink{classindex__item_aafe86cc0ad7284d6db317588f63d1cb2}{content})
+\item 
+\mbox{\Hypertarget{classindex__item_a39c6762ebfec7b2257423eac07bc1041}\label{classindex__item_a39c6762ebfec7b2257423eac07bc1041}} 
+const std\+::string \& {\bfseries get\+\_\+full\+\_\+content} () const
+\item 
+\mbox{\Hypertarget{classindex__item_a219d2cb125fbd81ca0e42bed49ab57d1}\label{classindex__item_a219d2cb125fbd81ca0e42bed49ab57d1}} 
+void {\bfseries set\+\_\+name} (const std\+::string \&\hyperlink{classindex__item_a1bcb5c577c3986549330c3aa283a6a5e}{name})
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classindex__item_a27bd13f3db83c91ed012784e4f667822}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classindex__item}{index\+\_\+item} \&right)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classindex__item_a26948d7ad5975fe8160fdedb58df9904}\label{classindex__item_a26948d7ad5975fe8160fdedb58df9904}} 
+\index{index\+\_\+item@{index\+\_\+item}!index\+\_\+item@{index\+\_\+item}}
+\index{index\+\_\+item@{index\+\_\+item}!index\+\_\+item@{index\+\_\+item}}
+\subsubsection{\texorpdfstring{index\+\_\+item()}{index\_item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily index\+\_\+item\+::index\+\_\+item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classindex__item_a1afb2c0d82acdec4707ffc1793fba0ff}\label{classindex__item_a1afb2c0d82acdec4707ffc1793fba0ff}} 
+\index{index\+\_\+item@{index\+\_\+item}!index\+\_\+item@{index\+\_\+item}}
+\index{index\+\_\+item@{index\+\_\+item}!index\+\_\+item@{index\+\_\+item}}
+\subsubsection{\texorpdfstring{index\+\_\+item()}{index\_item()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily index\+\_\+item\+::index\+\_\+item (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+Constructs an \hyperlink{classindex__item}{index\+\_\+item} using a file name 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classindex__item_aafe86cc0ad7284d6db317588f63d1cb2}\label{classindex__item_aafe86cc0ad7284d6db317588f63d1cb2}} 
+\index{index\+\_\+item@{index\+\_\+item}!content@{content}}
+\index{content@{content}!index\+\_\+item@{index\+\_\+item}}
+\subsubsection{\texorpdfstring{content()}{content()}}
+{\footnotesize\ttfamily std\+::string index\+\_\+item\+::content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the content of the document (Text) \mbox{\Hypertarget{classindex__item_a1bcb5c577c3986549330c3aa283a6a5e}\label{classindex__item_a1bcb5c577c3986549330c3aa283a6a5e}} 
+\index{index\+\_\+item@{index\+\_\+item}!name@{name}}
+\index{name@{name}!index\+\_\+item@{index\+\_\+item}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string index\+\_\+item\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the name of the document \mbox{\Hypertarget{classindex__item_a7c16d6bca513663fab66d40a6c0289a9}\label{classindex__item_a7c16d6bca513663fab66d40a6c0289a9}} 
+\index{index\+\_\+item@{index\+\_\+item}!size@{size}}
+\index{size@{size}!index\+\_\+item@{index\+\_\+item}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily virtual long index\+\_\+item\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+returns the the number of character in the document 
+
+Implemented in \hyperlink{classdocument_aad56f03674964346987dc7afd18aacf1}{document}, and \hyperlink{classsentence_ad673d4210850083f621383e2629a7b0e}{sentence}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classindex__item_a27bd13f3db83c91ed012784e4f667822}\label{classindex__item_a27bd13f3db83c91ed012784e4f667822}} 
+\index{index\+\_\+item@{index\+\_\+item}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!index\+\_\+item@{index\+\_\+item}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classindex__item}{index\+\_\+item} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints the document name and its content 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+index\+\_\+item.\+h\item 
+index\+\_\+item.\+cpp\end{DoxyCompactItemize}
