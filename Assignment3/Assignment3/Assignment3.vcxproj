@@ -116,6 +116,7 @@
     <ClCompile Include="document_indexer.cpp" />
     <ClCompile Include="googler.cpp" />
     <ClCompile Include="indexer.cpp" />
+    <ClCompile Include="indexing.cpp" />
     <ClCompile Include="index_item.cpp" />
     <ClCompile Include="query_result.cpp" />
     <ClCompile Include="sentence.cpp" />

@@ -59,7 +59,7 @@ int main() {
 
 		cout << "Essay:" << endl;
 		for (query_result result : results) {
-			cout << result.found_document->content() << endl << endl;
+			cout << result.found_document->content() << endl;
 		}
 
 		cout << endl;

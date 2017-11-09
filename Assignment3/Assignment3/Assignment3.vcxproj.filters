@@ -54,6 +54,9 @@
     <ClCompile Include="summarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="indexing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="document.h">
