@@ -124,6 +124,7 @@
     <ClCompile Include="sentence_tokenizer.cpp" />
     <ClCompile Include="stopword.cpp" />
     <ClCompile Include="summarizer.cpp" />
+    <ClCompile Include="term_info.cpp" />
     <ClCompile Include="word_tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="sentence_indexer.h" />
     <ClInclude Include="sentence_tokenizer.h" />
     <ClInclude Include="stopword.h" />
+    <ClInclude Include="term_info.h" />
     <ClInclude Include="word_tokenizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

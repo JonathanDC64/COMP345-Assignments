@@ -17,18 +17,22 @@
 #include "query_result.h"
 #include "word_tokenizer.h"
 #include "sentence_tokenizer.h"
+#include "term_info.h"
 
 using std::vector;
 using std::map;
 using std::string;
 using std::cout;
 using std::endl;
+using std::multimap;
 
+typedef map<string, map<int, term_info>> dmap;
 
-template <typename T, typename E>
 class indexer
 {
     
+	friend void operator>>(index_item & d, indexer & idx);
+
 	/*! Returns true if the left query_result has a bigger score than the right */
     friend bool gtScore(const query_result & left, const query_result & right);
     
@@ -38,13 +42,10 @@ class indexer
 public:
     
 	/*! Default constructor */
-    indexer<T,E>();
+    indexer();
     
     /*! Gives the number of documents processed by the index */
     unsigned int size() const;
-    
-    /*! Displays all terms, their fequency, their weight and document frequency to standard output*/
-    void output() const;
     
     /*! Removes all stopword terms from the dictionary*/
     void remove_stop_words();
@@ -57,11 +58,10 @@ public:
     
 protected:
     
-    vector<T> documents;
-    map<string, string> dictionary;
-    vector<vector<int>> occurences;
-    vector<int> document_frequency;
-    vector<vector<double>> weights;
+    vector<index_item*> documents;
+	dmap dictionary;
+	map<string, int> occurence_map;
+	vector<double> denoms;
     
     const string STOPWORD_FILENAME = "stopwords.txt";
     const string INDEX_FILENAME = "index.txt";
@@ -74,19 +74,13 @@ protected:
 	double score(string & query, int document_index);
 
 private:
-
-	std::map<string, int> occurence_map;
     
     const stopword stopwords;
 
-    std::string::size_type biggest_word_length = 0;
+    string::size_type biggest_word_length = 0;
 
-    void print_legend() const;
-    void print_full_line() const;
     double normalize(int term_fequency, int document_frequency);
 
-    double cosine_similarity(const vector<double> & q, const vector<double> & d);
-};
+    double cosine_similarity(const vector<double> & q, int document_index);
 
-template class indexer<document, word_tokenizer>;
-template class indexer<sentence, sentence_tokenizer>;
+};

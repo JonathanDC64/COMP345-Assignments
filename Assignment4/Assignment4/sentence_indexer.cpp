@@ -19,8 +19,11 @@ sentence_indexer::sentence_indexer()
 		document d(filename);
 		sentences = st.tokenize(d);
 
-		for (sentence s : sentences)
-			s >> *this;
+		for (sentence s : sentences) {
+			sentence * s_copy = new sentence(s);
+			*s_copy >> *this;
+		}
+			
 	}
 	this->N = documents.size();
 	this->generateDictionary();
@@ -35,7 +38,7 @@ vector<query_result> sentence_indexer::query(string search, int n)
 	for (int i = 0; i < documents.size(); i++) {
 		double score = this->score(search, i);
 		if (score != 0) {
-			results.push_back(query_result(documents[i], score));
+			results.push_back(query_result(*documents[i], score));
 		}
 	}
 
@@ -78,9 +81,4 @@ bool gtScoreGrouped(const query_result & left, const query_result & right)
 	else {
 		return ls->get_pos() < rs->get_pos();
 	}
-}
-
-void operator>>(sentence & s, sentence_indexer & idx)
-{
-	idx.documents.push_back(s);
 }

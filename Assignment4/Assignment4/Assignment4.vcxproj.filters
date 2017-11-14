@@ -57,6 +57,9 @@
     <ClCompile Include="word_tokenizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="term_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstract_tokenizer.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="word_tokenizer.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="term_info.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
