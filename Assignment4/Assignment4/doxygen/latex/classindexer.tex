@@ -1,0 +1,117 @@
+\hypertarget{classindexer}{}\section{indexer Class Reference}
+\label{classindexer}\index{indexer@{indexer}}
+Inheritance diagram for indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classindexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classindexer_acbbcbad080a7ae43ed78840fcf006960}{indexer} ()
+\item 
+virtual \hyperlink{classindexer_acc872b85bb2520b0cf803801811c9e58}{$\sim$indexer} ()
+\item 
+void \hyperlink{classindexer_a8c173bf8a59861ffec816f5b79737a6e}{remove\+Stopwords} ()
+\item 
+const \hyperlink{classindex__item}{index\+\_\+item} $\ast$ \hyperlink{classindexer_a454e14897d75b7a89253e135faaef62a}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+\hyperlink{classindex__item}{index\+\_\+item} $\ast$ \hyperlink{classindexer_abcf129b0575f95fa455b69dfb51edc44}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classindexer_a6e30ca200401d5b7ea2b9fe944d367b6}\label{classindexer_a6e30ca200401d5b7ea2b9fe944d367b6}} 
+int {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classindexer_a7aa98bdfd37121bbba06127f99325e84}\label{classindexer_a7aa98bdfd37121bbba06127f99325e84}} 
+virtual void {\bfseries generate\+Index\+Items} ()=0
+\item 
+\mbox{\Hypertarget{classindexer_af675f607be274dcd463291963ac3e730}\label{classindexer_af675f607be274dcd463291963ac3e730}} 
+virtual std\+::string {\bfseries get\+Index\+File} () const =0
+\item 
+\mbox{\Hypertarget{classindexer_adc2539219e227f664448927b7337b8dc}\label{classindexer_adc2539219e227f664448927b7337b8dc}} 
+virtual std\+::vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ {\bfseries query} (const std\+::string \&q, int n=10)=0
+\item 
+\mbox{\Hypertarget{classindexer_a31f3dc3a078fb76377a20a56f52e1598}\label{classindexer_a31f3dc3a078fb76377a20a56f52e1598}} 
+virtual void {\bfseries generate\+Dictionary} ()
+\item 
+\mbox{\Hypertarget{classindexer_afd19e249c5224de7b4b308c5420f2412}\label{classindexer_afd19e249c5224de7b4b308c5420f2412}} 
+void {\bfseries normalize} ()
+\item 
+\mbox{\Hypertarget{classindexer_a7cfd3df59433c515df8344196fb2395a}\label{classindexer_a7cfd3df59433c515df8344196fb2395a}} 
+double {\bfseries cosine\+\_\+similarity} (const std\+::vector$<$ double $>$ \&q, const std\+::vector$<$ double $>$ \&d, const int doc\+\_\+index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classindexer_aa48b1798b0488abfedb9d664d2196893}\label{classindexer_aa48b1798b0488abfedb9d664d2196893}} 
+dmap {\bfseries dictionary}
+\item 
+\mbox{\Hypertarget{classindexer_a780732f95bd0822d5b0e7fb81b1569c0}\label{classindexer_a780732f95bd0822d5b0e7fb81b1569c0}} 
+std\+::vector$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$ $>$ {\bfseries index\+\_\+items}
+\item 
+\mbox{\Hypertarget{classindexer_ad9beb15bff1c7567dc9869711f82088e}\label{classindexer_ad9beb15bff1c7567dc9869711f82088e}} 
+std\+::vector$<$ double $>$ {\bfseries denom\+\_\+double}
+\item 
+\mbox{\Hypertarget{classindexer_a60d8c3428894603e53b59d5e4146f411}\label{classindexer_a60d8c3428894603e53b59d5e4146f411}} 
+std\+::vector$<$ int $>$ {\bfseries totals}
+\item 
+\mbox{\Hypertarget{classindexer_acecde45d9eddf81e7c241fe8252de998}\label{classindexer_acecde45d9eddf81e7c241fe8252de998}} 
+unsigned int {\bfseries max\+Word\+Length}
+\item 
+\mbox{\Hypertarget{classindexer_a109471f4ff61ac6960845c28bf44cc61}\label{classindexer_a109471f4ff61ac6960845c28bf44cc61}} 
+\hyperlink{classstopword}{stopword} {\bfseries stop\+\_\+words}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classindexer_a96fe63b3dbcc00194498ff6fc23da381}\label{classindexer_a96fe63b3dbcc00194498ff6fc23da381}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classindexer}{indexer} \&right)
+\item 
+\mbox{\Hypertarget{classindexer_a81f04506b77d7cac6b29c6fd84a8665f}\label{classindexer_a81f04506b77d7cac6b29c6fd84a8665f}} 
+void {\bfseries operator$>$$>$} (\hyperlink{classindex__item}{index\+\_\+item} \&doc, \hyperlink{classindexer}{indexer} \&idx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classindexer_acbbcbad080a7ae43ed78840fcf006960}\label{classindexer_acbbcbad080a7ae43ed78840fcf006960}} 
+\index{indexer@{indexer}!indexer@{indexer}}
+\index{indexer@{indexer}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{indexer()}{indexer()}}
+{\footnotesize\ttfamily indexer\+::indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor -\/ initializes members \mbox{\Hypertarget{classindexer_acc872b85bb2520b0cf803801811c9e58}\label{classindexer_acc872b85bb2520b0cf803801811c9e58}} 
+\index{indexer@{indexer}!````~indexer@{$\sim$indexer}}
+\index{````~indexer@{$\sim$indexer}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{$\sim$indexer()}{~indexer()}}
+{\footnotesize\ttfamily indexer\+::$\sim$indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classindexer_a454e14897d75b7a89253e135faaef62a}\label{classindexer_a454e14897d75b7a89253e135faaef62a}} 
+\index{indexer@{indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classindex__item}{index\+\_\+item} $\ast$ indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+returns a const pointer to the index item at a given index \mbox{\Hypertarget{classindexer_abcf129b0575f95fa455b69dfb51edc44}\label{classindexer_abcf129b0575f95fa455b69dfb51edc44}} 
+\index{indexer@{indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classindex__item}{index\+\_\+item} $\ast$ indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+returns a pointer to the index item at a given index \mbox{\Hypertarget{classindexer_a8c173bf8a59861ffec816f5b79737a6e}\label{classindexer_a8c173bf8a59861ffec816f5b79737a6e}} 
+\index{indexer@{indexer}!remove\+Stopwords@{remove\+Stopwords}}
+\index{remove\+Stopwords@{remove\+Stopwords}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{remove\+Stopwords()}{removeStopwords()}}
+{\footnotesize\ttfamily void indexer\+::remove\+Stopwords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all stopwords from the dictionary 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+project/indexer.\+hpp\item 
+project/indexer.\+cpp\end{DoxyCompactItemize}

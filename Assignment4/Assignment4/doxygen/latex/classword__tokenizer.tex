@@ -1,0 +1,57 @@
+\hypertarget{classword__tokenizer}{}\section{word\+\_\+tokenizer Class Reference}
+\label{classword__tokenizer}\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+Inheritance diagram for word\+\_\+tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classword__tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classword__tokenizer_ab0308f2cf9249f3c296307a055ee78df}{tokenize} (const \hyperlink{classdocument}{document} \&doc) const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \hyperlink{classword__tokenizer_afa183b351b9322ed7a609796b56563cf}{tokenize\+String} (const std\+::string s)
+\item 
+static std\+::string \hyperlink{classword__tokenizer_ad214c1e5a60c0c0ea428f4a1df1ee4e0}{sanitize} (std\+::string word)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classword__tokenizer_ac1261a37f30d269708741936016b5f11}\label{classword__tokenizer_ac1261a37f30d269708741936016b5f11}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classword__tokenizer}{word\+\_\+tokenizer} \&right)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classword__tokenizer_ad214c1e5a60c0c0ea428f4a1df1ee4e0}\label{classword__tokenizer_ad214c1e5a60c0c0ea428f4a1df1ee4e0}} 
+\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}!sanitize@{sanitize}}
+\index{sanitize@{sanitize}!word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{sanitize()}{sanitize()}}
+{\footnotesize\ttfamily std\+::string word\+\_\+tokenizer\+::sanitize (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+makes the word lowercase and removes punctuation \mbox{\Hypertarget{classword__tokenizer_ab0308f2cf9249f3c296307a055ee78df}\label{classword__tokenizer_ab0308f2cf9249f3c296307a055ee78df}} 
+\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ word\+\_\+tokenizer\+::tokenize (\begin{DoxyParamCaption}\item[{const \hyperlink{classdocument}{document} \&}]{doc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+splits the document\textquotesingle{}s content into words 
+
+Implements \hyperlink{classabstract__tokenizer_a5948210e787d9ed3681800b4e3926701}{abstract\+\_\+tokenizer$<$ std\+::string $>$}.
+
+\mbox{\Hypertarget{classword__tokenizer_afa183b351b9322ed7a609796b56563cf}\label{classword__tokenizer_afa183b351b9322ed7a609796b56563cf}} 
+\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}!tokenize\+String@{tokenize\+String}}
+\index{tokenize\+String@{tokenize\+String}!word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{tokenize\+String()}{tokenizeString()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ word\+\_\+tokenizer\+::tokenize\+String (\begin{DoxyParamCaption}\item[{const std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+splits the string into words 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+project/word\+\_\+tokenizer.\+hpp\item 
+project/word\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}

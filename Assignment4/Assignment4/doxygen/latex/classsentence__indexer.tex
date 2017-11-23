@@ -1,0 +1,78 @@
+\hypertarget{classsentence__indexer}{}\section{sentence\+\_\+indexer Class Reference}
+\label{classsentence__indexer}\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+Inheritance diagram for sentence\+\_\+indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsentence__indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsentence__indexer_a365d5a760a116eb4f48fe8fdbdeb0421}{sentence\+\_\+indexer} ()
+\item 
+virtual std\+::vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ \hyperlink{classsentence__indexer_af2e0c3b623e5180ab8684e426962c531}{query} (const std\+::string \&q, int n=500) override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classsentence__indexer_af3c7b09486d9cdfb49d6ebf7be6623c6}{queries}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::set$<$ std\+::string $>$ \hyperlink{classsentence__indexer_abdcbe72e9fa681c5a59f4cfeb5c9dcbc}{abbreviations}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsentence__indexer_ad09f6baaa740dac6056316377c95dfa7}\label{classsentence__indexer_ad09f6baaa740dac6056316377c95dfa7}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classsentence__indexer}{sentence\+\_\+indexer} \&right)
+\item 
+\mbox{\Hypertarget{classsentence__indexer_a105a138776c9677f92568db3f53d91f2}\label{classsentence__indexer_a105a138776c9677f92568db3f53d91f2}} 
+bool {\bfseries gt\+Score\+Grouped} (const \hyperlink{classquery__result}{query\+\_\+result} \&left, const \hyperlink{classquery__result}{query\+\_\+result} \&right)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsentence__indexer_a365d5a760a116eb4f48fe8fdbdeb0421}\label{classsentence__indexer_a365d5a760a116eb4f48fe8fdbdeb0421}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{sentence\+\_\+indexer()}{sentence\_indexer()}}
+{\footnotesize\ttfamily sentence\+\_\+indexer\+::sentence\+\_\+indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsentence__indexer_af2e0c3b623e5180ab8684e426962c531}\label{classsentence__indexer_af2e0c3b623e5180ab8684e426962c531}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!query@{query}}
+\index{query@{query}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classquery__result}{query\+\_\+result} $>$ sentence\+\_\+indexer\+::query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{q,  }\item[{int}]{n = {\ttfamily 500} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+from a given 
+
+Implements \hyperlink{classindexer}{indexer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsentence__indexer_abdcbe72e9fa681c5a59f4cfeb5c9dcbc}\label{classsentence__indexer_abdcbe72e9fa681c5a59f4cfeb5c9dcbc}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!abbreviations@{abbreviations}}
+\index{abbreviations@{abbreviations}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{abbreviations}{abbreviations}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ sentence\+\_\+indexer\+::abbreviations\hspace{0.3cm}{\ttfamily [static]}}
+
+holds the set of abbreviations \mbox{\Hypertarget{classsentence__indexer_af3c7b09486d9cdfb49d6ebf7be6623c6}\label{classsentence__indexer_af3c7b09486d9cdfb49d6ebf7be6623c6}} 
+\index{sentence\+\_\+indexer@{sentence\+\_\+indexer}!queries@{queries}}
+\index{queries@{queries}!sentence\+\_\+indexer@{sentence\+\_\+indexer}}
+\subsubsection{\texorpdfstring{queries}{queries}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ sentence\+\_\+indexer\+::queries}
+
+holds the set of queries 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+project/sentence\+\_\+indexer.\+hpp\item 
+project/sentence\+\_\+indexer.\+cpp\end{DoxyCompactItemize}

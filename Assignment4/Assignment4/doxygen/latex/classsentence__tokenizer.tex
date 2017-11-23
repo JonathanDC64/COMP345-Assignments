@@ -1,0 +1,49 @@
+\hypertarget{classsentence__tokenizer}{}\section{sentence\+\_\+tokenizer Class Reference}
+\label{classsentence__tokenizer}\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+Inheritance diagram for sentence\+\_\+tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsentence__tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ \hyperlink{classsentence}{sentence} $>$ \hyperlink{classsentence__tokenizer_a7d8d0af4624c8bc7d37dd85af99f5695}{tokenize} (const \hyperlink{classdocument}{document} \&doc) const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classsentence}{sentence} \hyperlink{classsentence__tokenizer_a9e0f69df43e0a28ff849628274bc7990}{sanitize} (\hyperlink{classsentence}{sentence} \&sent)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsentence__tokenizer_a117c39aafe92e99e106009e113640bc5}\label{classsentence__tokenizer_a117c39aafe92e99e106009e113640bc5}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classsentence__tokenizer}{sentence\+\_\+tokenizer} \&right)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsentence__tokenizer_a9e0f69df43e0a28ff849628274bc7990}\label{classsentence__tokenizer_a9e0f69df43e0a28ff849628274bc7990}} 
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!sanitize@{sanitize}}
+\index{sanitize@{sanitize}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{sanitize()}{sanitize()}}
+{\footnotesize\ttfamily \hyperlink{classsentence}{sentence} sentence\+\_\+tokenizer\+::sanitize (\begin{DoxyParamCaption}\item[{\hyperlink{classsentence}{sentence} \&}]{sent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+removes unnecessary white spaces from the sentence \mbox{\Hypertarget{classsentence__tokenizer_a7d8d0af4624c8bc7d37dd85af99f5695}\label{classsentence__tokenizer_a7d8d0af4624c8bc7d37dd85af99f5695}} 
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classsentence}{sentence} $>$ sentence\+\_\+tokenizer\+::tokenize (\begin{DoxyParamCaption}\item[{const \hyperlink{classdocument}{document} \&}]{doc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+splits the document into sentences 
+
+Implements \hyperlink{classabstract__tokenizer_a5948210e787d9ed3681800b4e3926701}{abstract\+\_\+tokenizer$<$ sentence $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+project/sentence\+\_\+tokenizer.\+hpp\item 
+project/sentence\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}
