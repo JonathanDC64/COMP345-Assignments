@@ -19,7 +19,9 @@ void googler();
 
 // ./'program_name' i     i= 1...4 for each assignment
 int main(int argc, char *argv[]){
-    runProgram(*argv[1]);
+    //runProgram(*argv[1]);
+	runProgram('4');
+	system("pause");
 }
 
 
